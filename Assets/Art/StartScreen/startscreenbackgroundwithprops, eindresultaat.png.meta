@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c7cecca47fd893f48ae324f7a31fc244
+guid: d4cc64c7126c7a54db97d6f8c63b8a1f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1898388805730282921
-    second: GipsRupsColored1_0
+      213: -2208092805132118507
+    second: startscreenbackgroundwithprops, eindresultaat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GipsRupsColored1_0
+      name: startscreenbackgroundwithprops, eindresultaat_0
       rect:
         serializedVersion: 2
-        x: 161
-        y: 116
-        width: 676
-        height: 793
+        x: 0
+        y: 0
+        width: 3840
+        height: 2160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7525ed4707197a5e0800000000000000
-      internalID: -1898388805730282921
+      spriteID: 516110fea474b51e0800000000000000
+      internalID: -2208092805132118507
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      GipsRupsColored1_0: -1898388805730282921
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
