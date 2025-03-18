@@ -14,3 +14,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
         
     }
 }
+//tesnten
+debug.log
+    ("test");
