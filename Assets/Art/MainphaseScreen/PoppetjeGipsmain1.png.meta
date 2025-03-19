@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PoppetjeGipsmain1_0: -392833635138111285
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

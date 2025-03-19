@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GipsRupsGipsVanBeenHoera_0: -4391913262738712970
+      GipsRupsGipsVanBeenHoera_1: -1787052249483129590
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

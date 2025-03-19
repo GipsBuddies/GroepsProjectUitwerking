@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ziekenhuisbedgipsmain2_0: -16356397577356783
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
