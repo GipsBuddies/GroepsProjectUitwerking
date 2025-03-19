@@ -22,6 +22,7 @@ public class ScreenHandler : MonoBehaviour
     public GameObject questionScreen;
     public GameObject loginScreen;
     public GameObject registerScreen;
+    public GameObject accountScreen;
 
     public bool loggedIn;
     private bool OnHomeScreen;
@@ -50,6 +51,7 @@ public class ScreenHandler : MonoBehaviour
         questionScreen.SetActive(false);
         loginScreen.SetActive(false);
         registerScreen.SetActive(false);
+        accountScreen.SetActive(false);
 
         OnHomeScreen = false;
     }
@@ -175,6 +177,20 @@ public class ScreenHandler : MonoBehaviour
         ResetScreens();
         menubar.SetActive(true);
         registerScreen.SetActive(true);
+    }
+
+    public void GoToAccountScreen()
+    {
+        if (loggedIn)
+        {
+            ResetScreens();
+            menubar.SetActive(true);
+            accountScreen.SetActive(true);
+        }
+        else
+        {
+            GoToLoginScreen();
+        }
     }
 
     #endregion
