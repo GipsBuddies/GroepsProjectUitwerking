@@ -25,7 +25,7 @@ public class ScreenHandler : MonoBehaviour
     public GameObject accountScreen;
 
     public bool loggedIn;
-    private bool OnHomeScreen;
+    private bool onHomeScreen;
 
 
     void Start()
@@ -53,7 +53,7 @@ public class ScreenHandler : MonoBehaviour
         registerScreen.SetActive(false);
         accountScreen.SetActive(false);
 
-        OnHomeScreen = false;
+        onHomeScreen = false;
     }
 
     #region MainScenes
@@ -66,17 +66,17 @@ public class ScreenHandler : MonoBehaviour
 
     public void GoToHomeScreen()
     {
-        if (OnHomeScreen)
+        if (onHomeScreen)
         {
             GoToStartScreen();
-            OnHomeScreen = false;
+            onHomeScreen = false;
         }
         else
         {
             ResetScreens();
             menubar.SetActive(true);
             homeScreen.SetActive(true);
-            OnHomeScreen = true;
+            onHomeScreen = true;
         }
     }
 
