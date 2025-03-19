@@ -2897,7 +2897,7 @@ GameObject:
   - component: {fileID: 517675602}
   - component: {fileID: 517675601}
   m_Layer: 5
-  m_Name: HospitalImage
+  m_Name: Docter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2920,7 +2920,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 622.3, y: 84.5}
-  m_SizeDelta: {x: 300, y: 200}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517675601
 MonoBehaviour:
@@ -2942,7 +2942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -16356397577356783, guid: 038fc4e8b892f3941b5336b1e1a11ae8, type: 3}
+  m_Sprite: {fileID: 9135780268306523547, guid: 86b5b32897793a44286789cf17c10b0e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3794,7 +3794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &738294732
 Transform:
   m_ObjectHideFlags: 0
@@ -4466,7 +4466,7 @@ GameObject:
   - component: {fileID: 841067130}
   - component: {fileID: 841067129}
   m_Layer: 5
-  m_Name: CastImage
+  m_Name: ParentDocterImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4489,7 +4489,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -611.7, y: -29.3}
-  m_SizeDelta: {x: 336, y: 532}
+  m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &841067129
 MonoBehaviour:
@@ -4511,7 +4511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3464258227181604906, guid: 22cb898472841a3499cbea3e489d61fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22cb898472841a3499cbea3e489d61fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6020,7 +6020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1084765647
 Transform:
   m_ObjectHideFlags: 0
@@ -6898,7 +6898,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8205534427592879415, guid: 00c62ef973728f341a384e81d1414521, type: 3}
+  m_Sprite: {fileID: -2945351761109677792, guid: 019153de1f1948545a70411444f99cae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10697,7 +10697,7 @@ GameObject:
   - component: {fileID: 2078896110}
   - component: {fileID: 2078896109}
   m_Layer: 5
-  m_Name: HealtyArmImage
+  m_Name: DeleteCastImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10742,7 +10742,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1197704796202380718, guid: cbd5f359b6464e94eacdea649d766bc1, type: 3}
+  m_Sprite: {fileID: 2310236835360350740, guid: a8648d52181ffaa41a9001496bcc4437, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
