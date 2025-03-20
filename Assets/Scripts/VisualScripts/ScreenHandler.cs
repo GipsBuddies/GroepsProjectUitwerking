@@ -31,6 +31,7 @@ public class ScreenHandler : MonoBehaviour
     void Start()
     {
         GoToStartScreen();
+        loggedIn = false;
     }
 
     public void ResetScreens()
