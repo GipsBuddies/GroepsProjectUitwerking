@@ -1,0 +1,65 @@
+{
+    "dialogue":
+    [
+        {
+            "seriesName": "opening",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Hallo!",
+                    "characterLine2": "Waar kan ik je mee helpen?",
+
+                    "characterEmotion": "neutral",
+                    "dialogueOptions": [
+                        {
+                            "text": "Hoe werkt de tekenfunctie?",
+                            "iconName": "brush",
+                            "takesYouTo": "explainDrawing"
+                        },
+                        {
+                            "text": "Waar kan ik mijn traject zien?",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "explainTrajectory"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "explainDrawing",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Goede vraag!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Als je op de tekeningen rechts klikt,",
+                    "characterLine2": "ga je naar de tekenpagina.",
+
+                    "characterEmotion": "neutral",
+                    "dialogueOptions": [
+                        {
+                            "text": "Begrepen!",
+                            "iconName": "thumbsUp",
+                            "takesYouTo": "happyToHelp"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "happyToHelp",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Fijn dat ik je kon helpen!",
+
+                    "characterEmotion": "cheerful"
+                }
+            ]
+        }
+    ]
+
+}
