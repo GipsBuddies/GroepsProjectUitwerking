@@ -1,16 +1,26 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class DialogueModeOpening : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject DialogueScreen;
 
-    // Update is called once per frame
-    void Update()
+    public Transform DialogueBox;
+    public Transform Character;
+
+    public Vector3 DialogueBoxPosition;
+    public float DialogueBoxMoveDuration;
+    public Vector3 CharacterPosition;
+    public float CharacterMoveDuration;
+
+    private void Start()
     {
-        
+        Tween moveDialogueBoxIntoPosition = DialogueBox.DOLocalMove(DialogueBoxPosition,DialogueBoxMoveDuration);
+        moveDialogueBoxIntoPosition.SetEase(Ease.OutBack);
+        moveDialogueBoxIntoPosition.Play();
+
+        Tween moveCharacterIntoPosition = Character.DOLocalMove(CharacterPosition, CharacterMoveDuration);
+        moveCharacterIntoPosition.SetEase(Ease.OutSine);
+        moveCharacterIntoPosition.Play();
     }
 }
