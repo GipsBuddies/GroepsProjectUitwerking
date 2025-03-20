@@ -197,7 +197,7 @@ public class ScreenHandler : MonoBehaviour
     {
         ResetScreens();
         menubar.SetActive(true);
-        mainphaseScreenRouteB.SetActive(true);
+        postphasescreenRouteB.SetActive(true);
     }
 
     #endregion
