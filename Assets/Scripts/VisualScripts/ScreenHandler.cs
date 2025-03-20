@@ -7,7 +7,8 @@ using UnityEngine;
 public class ScreenHandler : MonoBehaviour
 {
     public GameObject startScreen;
-    public GameObject homeScreen;
+    public GameObject homeScreenRouteA;
+    public GameObject homeScreenRouteB;
     public GameObject menubar;
 
     public GameObject diaryScreen;
@@ -15,9 +16,13 @@ public class ScreenHandler : MonoBehaviour
     public GameObject readDiaryScreen;
     public GameObject drawDiaryScreen;
 
-    public GameObject prephaseScreen;
-    public GameObject mainphaseScreen;
-    public GameObject postphasescreen;
+    public GameObject prephaseScreenRouteA;
+    public GameObject mainphaseScreenRouteA;
+    public GameObject postphasescreenRouteA;
+
+    public GameObject prephaseScreenRouteB;
+    public GameObject mainphaseScreenRouteB;
+    public GameObject postphasescreenRouteB;
 
     public GameObject questionScreen;
     public GameObject loginScreen;
@@ -25,6 +30,7 @@ public class ScreenHandler : MonoBehaviour
     public GameObject accountScreen;
 
     public bool loggedIn;
+    public bool followsRouteB;
     private bool onHomeScreen;
 
 
@@ -37,7 +43,8 @@ public class ScreenHandler : MonoBehaviour
     public void ResetScreens()
     {
         startScreen.SetActive(false);
-        homeScreen.SetActive(false);
+        homeScreenRouteA.SetActive(false);
+        homeScreenRouteB.SetActive(false);
         menubar.SetActive(false);
 
         diaryScreen.SetActive(false);
@@ -45,9 +52,13 @@ public class ScreenHandler : MonoBehaviour
         readDiaryScreen.SetActive(false);
         drawDiaryScreen.SetActive(false);
 
-        prephaseScreen.SetActive(false);
-        mainphaseScreen.SetActive(false);
-        postphasescreen.SetActive(false);
+        prephaseScreenRouteA.SetActive(false);
+        mainphaseScreenRouteA.SetActive(false);
+        postphasescreenRouteA.SetActive(false);
+
+        prephaseScreenRouteB.SetActive(false);
+        mainphaseScreenRouteB.SetActive(false);
+        postphasescreenRouteB.SetActive(false);
 
         questionScreen.SetActive(false);
         loginScreen.SetActive(false);
@@ -74,9 +85,18 @@ public class ScreenHandler : MonoBehaviour
         }
         else
         {
-            ResetScreens();
-            menubar.SetActive(true);
-            homeScreen.SetActive(true);
+            if (followsRouteB)
+            {
+                ResetScreens();
+                menubar.SetActive(true);
+                homeScreenRouteB.SetActive(true);
+            }
+            else
+            {
+                ResetScreens();
+                menubar.SetActive(true);
+                homeScreenRouteA.SetActive(true);
+            }
             onHomeScreen = true;
         }
     }
@@ -132,27 +152,52 @@ public class ScreenHandler : MonoBehaviour
 
     #endregion
 
-    #region PhaseScreens
+    #region PhaseScreensRouteA
 
-    public void GoToPrephaseScreen()
+    public void GoToPrephaseScreenRouteA()
     {
         ResetScreens();
         menubar.SetActive(true);
-        prephaseScreen.SetActive(true);
+        prephaseScreenRouteA.SetActive(true);
     }
 
-    public void GoToMainphaseScreen()
+    public void GoToMainphaseScreenRouteA()
     {
         ResetScreens();
         menubar.SetActive(true);
-        mainphaseScreen.SetActive(true);
+        mainphaseScreenRouteA.SetActive(true);
     }
 
-    public void GoToPostphaseScreen()
+    public void GoToPostphaseScreenRouteA()
     {
         ResetScreens();
         menubar.SetActive(true);
-        postphasescreen.SetActive(true);
+        postphasescreenRouteA.SetActive(true);
+    }
+
+    #endregion
+
+    #region PhaseScreensRouteB
+
+    public void GoToPrephaseScreenRouteB()
+    {
+        ResetScreens();
+        menubar.SetActive(true);
+        prephaseScreenRouteB.SetActive(true);
+    }
+
+    public void GoToMainphaseScreenRouteB()
+    {
+        ResetScreens();
+        menubar.SetActive(true);
+        mainphaseScreenRouteB.SetActive(true);
+    }
+
+    public void GoToPostphaseScreenRouteB()
+    {
+        ResetScreens();
+        menubar.SetActive(true);
+        mainphaseScreenRouteB.SetActive(true);
     }
 
     #endregion
