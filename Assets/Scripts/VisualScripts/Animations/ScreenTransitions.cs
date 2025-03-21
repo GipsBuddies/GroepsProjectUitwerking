@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScreenTransitions : MonoBehaviour
 {
+
     //public Transform ScreenToFadeOut;
     public Transform TransitionCircle;
     public Transform TransitionSquare;
@@ -21,7 +22,8 @@ public class ScreenTransitions : MonoBehaviour
     //public float GrownScale;
 
     public float MaxTransitionObjectSize;
-    public float AnimationDuration;
+    public float ClosingDuration;
+    public float OpeningDuration;
 
     //public void SwingOut()
     //{
@@ -38,51 +40,96 @@ public class ScreenTransitions : MonoBehaviour
     //    RemoveObjectOnceAnimationFinishes(RightAboveScreen);
     //}
 
-    public void UseCircleTransition()
+    #region ClosingTransitions
+
+    public void UseCircleTransition(string openingTransition)
     {
         TransitionCircleAsObject.SetActive(true);
-        Tween transitionCircleScaleX = TransitionCircle.DOScaleX(1, AnimationDuration);
-        Tween transitionCircleScaleY = TransitionCircle.DOScaleY(1, AnimationDuration);
-        Tween transitionSquareScaleX = TransitionSquare.DOScaleX(2300, AnimationDuration);
-        Tween transitionSquareScaleY = TransitionSquare.DOScaleY(2300, AnimationDuration);
-        Tween transitionCircleMove = TransitionCircle.DOLocalMove(PositionForCircleToCloseInOn, AnimationDuration);
+        Tween circleScaleX = TransitionCircle.DOScaleX(1, ClosingDuration);
+        Tween circleScaleY = TransitionCircle.DOScaleY(1, ClosingDuration);
+        Tween squareScaleX = TransitionSquare.DOScaleX(2300, ClosingDuration);
+        Tween squareScaleY = TransitionSquare.DOScaleY(2300, ClosingDuration);
+        Tween circleMove = TransitionCircle.DOLocalMove(PositionForCircleToCloseInOn, ClosingDuration);
 
-        transitionCircleScaleX.SetEase(Ease.OutSine);
-        transitionCircleScaleY.SetEase(Ease.OutSine);
-        transitionSquareScaleX.SetEase(Ease.OutSine);
-        transitionSquareScaleY.SetEase(Ease.OutSine);
-        transitionCircleMove.SetEase(Ease.OutSine);
+        circleScaleX.SetEase(Ease.OutSine);
+        circleScaleY.SetEase(Ease.OutSine);
+        squareScaleX.SetEase(Ease.OutSine);
+        squareScaleY.SetEase(Ease.OutSine);
+        circleMove.SetEase(Ease.OutSine);
 
-        transitionCircleScaleX.Play();
-        transitionCircleScaleY.Play();
-        transitionSquareScaleX.Play();
-        transitionSquareScaleY.Play();
-        transitionCircleMove.Play();
+        circleScaleX.Play();
+        circleScaleY.Play();
+        squareScaleX.Play();
+        squareScaleY.Play();
+        circleMove.Play();
 
-        StartWaitingForCircleAnimation(true);
+        StartWaitingForClosingAnimation("circle", openingTransition);
     }
+
+    #endregion
+
+    #region WaitingToClose
+
+    private void StartWaitingForClosingAnimation(string closingTransition, string openingTransition)
+    {
+        switch(closingTransition)
+        {
+            case "circle":
+                StartCoroutine(WaitForCircleToClose(openingTransition));
+                break;
+            default:
+                StartCoroutine(WaitForCircleToClose(openingTransition));
+                Debug.Log("Did not recognize closing transition, defaulting to circle");
+                break;
+        }
+    }
+    private IEnumerator WaitForCircleToClose(string openingTransition)
+    {
+        Debug.Log("Started Waiting To Close");
+        while (TransitionCircle.localScale.x > 1)
+        {
+            yield return null;
+        }
+
+        Debug.Log("Finished Waiting To Close");
+
+        switch(openingTransition)
+        {
+            case "circle":
+                OpenCircleAgain();
+                break;
+            default:
+                OpenCircleAgain();
+                Debug.Log("Did not recognize opening transition, defaulting to circle");
+                break;
+        }
+    }
+
+    #endregion
+
+    #region OpeningTransitions
 
     private void OpenCircleAgain()
     {
-        Tween transitionCircleScaleX = TransitionCircle.DOScaleX(2300, AnimationDuration);
-        Tween transitionCircleScaleY = TransitionCircle.DOScaleY(2300, AnimationDuration);
-        Tween transitionSquareScaleX = TransitionSquare.DOScaleX(1, AnimationDuration);
-        Tween transitionSquareScaleY = TransitionSquare.DOScaleY(1, AnimationDuration);
-        Tween transitionCircleMove = TransitionCircle.DOLocalMove(StandardPosition, AnimationDuration);
+        Tween circleScaleX = TransitionCircle.DOScaleX(2300, OpeningDuration);
+        Tween circleScaleY = TransitionCircle.DOScaleY(2300, OpeningDuration);
+        Tween squareScaleX = TransitionSquare.DOScaleX(1, OpeningDuration);
+        Tween squareScaleY = TransitionSquare.DOScaleY(1, OpeningDuration);
+        Tween circleMove = TransitionCircle.DOLocalMove(StandardPosition, OpeningDuration);
 
-        transitionCircleScaleX.SetEase(Ease.InSine);
-        transitionCircleScaleY.SetEase(Ease.InSine);
-        transitionSquareScaleX.SetEase(Ease.InSine);
-        transitionSquareScaleY.SetEase(Ease.InSine);
-        transitionCircleMove.SetEase(Ease.InSine);
+        circleScaleX.SetEase(Ease.InSine);
+        circleScaleY.SetEase(Ease.InSine);
+        squareScaleX.SetEase(Ease.InSine);
+        squareScaleY.SetEase(Ease.InSine);
+        circleMove.SetEase(Ease.InSine);
 
-        transitionCircleScaleX.Play();
-        transitionCircleScaleY.Play();
-        transitionSquareScaleX.Play();
-        transitionSquareScaleY.Play();
-        transitionCircleMove.Play();
+        circleScaleX.Play();
+        circleScaleY.Play();
+        squareScaleX.Play();
+        squareScaleY.Play();
+        circleMove.Play();
 
-        StartWaitingForCircleAnimation(false);
+        StartWaitingForOpeningAnimation("circle");
     }
 
     //public void RemoveObjectOnceAnimationFinishes(Vector3 endPosition)
@@ -90,32 +137,24 @@ public class ScreenTransitions : MonoBehaviour
     //    StartCoroutine(Waiting(endPosition));
     //}
 
-    private void StartWaitingForCircleAnimation(bool closing)
-    {
-        if(closing)
-        {
-            StartCoroutine(WaitForCircleToClose());
-        }
-        else
-        {
-            StartCoroutine(WaitForCircleToOpen());
-        }
-    }
-    
-    private IEnumerator WaitForCircleToClose()
-    {
-        Debug.Log("Started Waiting To Close");
-        while (TransitionCircle.localScale.x > 2)
-        {
-            yield return null;
-        }
+    #endregion
 
-        Debug.Log("Finished Waiting To Close");
+    #region WaitingToOpen
 
+    private void StartWaitingForOpeningAnimation(string openingTransition)
+    {
         PageToClose.SetActive(false);
         PageToOpen.SetActive(true);
 
-        OpenCircleAgain();
+        switch (openingTransition)
+        {
+            case "circle":
+                StartCoroutine(WaitForCircleToOpen());
+                break;
+            default:
+                Debug.Log("Mistake in Opening Animation");
+                break;
+        }
     }
 
     private IEnumerator WaitForCircleToOpen()
@@ -130,4 +169,6 @@ public class ScreenTransitions : MonoBehaviour
 
         TransitionCircleAsObject.SetActive(false);
     }
+
+    #endregion
 }
