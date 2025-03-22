@@ -1,6 +1,5 @@
 {
-    "dialogue":
-    [
+    "dialogue": [
         {
             "seriesName": "opening",
 
@@ -46,6 +45,42 @@
                             "takesYouTo": "happyToHelp"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "seriesName": "explainTrajectory",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Hmmm....",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Dat weet ik eigenlijk nog niet...",
+                    "characterLine2": "Sorry!",
+
+                    "characterEmotion": "neutral",
+                    "dialogueOptions": [
+                        {
+                            "text": "Ach ja...",
+                            "iconName": "thumbsUp",
+                            "takesYouTo": "ohWell"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "ohWell",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Nou ja, je kunt altijd langskomen",
+                    "characterLine2": "als je iets wilt weten...",
+
+                    "characterEmotion": "cheerful"
                 }
             ]
         },

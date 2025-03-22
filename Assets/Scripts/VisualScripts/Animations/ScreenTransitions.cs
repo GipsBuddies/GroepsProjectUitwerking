@@ -55,7 +55,7 @@ public class ScreenTransitions : MonoBehaviour
         circleScaleY.SetEase(Ease.OutSine);
         squareScaleX.SetEase(Ease.OutSine);
         squareScaleY.SetEase(Ease.OutSine);
-        circleMove.SetEase(Ease.OutSine);
+        circleMove.SetEase(Ease.OutQuad);
 
         circleScaleX.Play();
         circleScaleY.Play();
@@ -121,7 +121,7 @@ public class ScreenTransitions : MonoBehaviour
         circleScaleY.SetEase(Ease.InSine);
         squareScaleX.SetEase(Ease.InSine);
         squareScaleY.SetEase(Ease.InSine);
-        circleMove.SetEase(Ease.InSine);
+        circleMove.SetEase(Ease.InQuad);
 
         circleScaleX.Play();
         circleScaleY.Play();
