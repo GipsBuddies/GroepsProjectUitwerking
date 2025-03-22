@@ -36,7 +36,7 @@ public class DialogueMode : MonoBehaviour
     private int _activeDialogueScreenNumber;
     private DialogueScreen _activeDialogueScreen;
 
-    private void Start()
+    private void OnEnable()
     {
         SetDialogueSeries("opening");
 
