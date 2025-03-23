@@ -1,7 +1,7 @@
 using System;
 using DG.Tweening;
 using TMPro;
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static JsonDialogueReader;
@@ -20,11 +20,24 @@ public class DialogueMode : MonoBehaviour
     public GameObject NextButton;
     public GameObject ButtonPrefab;
     public Transform ButtonParent;
+    public Transform WebLinkObject;
+    public TMP_Text WebLinkTitle;
+
+    public GameObject CharacterNeutral;
+    public GameObject CharacterCheerful;
+    public GameObject CharacterThinking;
 
     public Vector3 DialogueBoxPosition;
     public float DialogueBoxMoveDuration;
     public Vector3 CharacterPosition;
     public float CharacterMoveDuration;
+    public Vector3 WebLinkObjectPosition;
+    public float WebLinkObjectAppearDuration;
+    public float WebLinkObjectDisappearDuration;
+
+    public float CharacterSquishIntensity;
+    public float CharacterSquishDuration;
+    public float CharacterUnsquishDuration;
 
     public float FirstButtonX;
     public float FirstButtonY;
@@ -35,6 +48,9 @@ public class DialogueMode : MonoBehaviour
     private DialogueSeries _activeDialogueSeries;
     private int _activeDialogueScreenNumber;
     private DialogueScreen _activeDialogueScreen;
+    private string _activeWebLink;
+    private string _activeWebLinkTitle;
+
 
     private void OnEnable()
     {
@@ -42,6 +58,12 @@ public class DialogueMode : MonoBehaviour
 
         MoveCharacterInFromLeft();
         MoveDialogueBoxInFromBelow();
+    }
+
+    private void OnDisable()
+    {
+        Character.SetPositionAndRotation(new Vector3 { x = -440, y = 540 }, Quaternion.identity);
+        DialogueBox.SetPositionAndRotation(new Vector3 { x = 960, y = -340 }, Quaternion.identity);
     }
 
     private void MoveCharacterInFromLeft()
@@ -71,6 +93,8 @@ public class DialogueMode : MonoBehaviour
 
         SetDialogueBoxText();
         MakeButtonsAppear();
+        SetCharacterEmotion();
+        MakeCharacterBounce();
     }
 
     public void ClearDialogueBox()
@@ -91,12 +115,15 @@ public class DialogueMode : MonoBehaviour
     {
         if(_activeDialogueScreen.dialogueOptions != null)
         {
+            float firstButtonYForManyButtons = _activeDialogueScreen.dialogueOptions.Length > 2 ? FirstButtonY + 150 : FirstButtonY;
+            float smartButtonSpacing = _activeDialogueScreen.dialogueOptions.Length > 3 ? ButtonSpacing * (Mathf.Pow((float)0.8, _activeDialogueScreen.dialogueOptions.Length)) : ButtonSpacing;
+
             for (int buttonIndex = 0; buttonIndex < _activeDialogueScreen.dialogueOptions.Length; buttonIndex++)
             {
                 string currentText = _activeDialogueScreen.dialogueOptions[buttonIndex].text;
                 string currentTakesYouTo = _activeDialogueScreen.dialogueOptions[buttonIndex].takesYouTo;
 
-                GameObject button = (GameObject)Instantiate(ButtonPrefab, new Vector3{x = FirstButtonX, y = FirstButtonY - (buttonIndex * ButtonSpacing), z = 0}, Quaternion.identity, ButtonParent);
+                GameObject button = (GameObject)Instantiate(ButtonPrefab, new Vector3{x = FirstButtonX, y = firstButtonYForManyButtons - (buttonIndex * smartButtonSpacing), z = 0}, Quaternion.identity, ButtonParent);
                 button.GetComponentInChildren<TMP_Text>().text = currentText;
                 button.GetComponent<Button>().onClick.AddListener(() => { SetDialogueSeries(currentTakesYouTo); });
 
@@ -113,6 +140,11 @@ public class DialogueMode : MonoBehaviour
         else
         {
             NextButton.SetActive(true);
+        }
+
+        if(_activeDialogueScreen.externalLink != null)
+        {
+            MakeLinkButtonAppear();
         }
     }
 
@@ -131,6 +163,8 @@ public class DialogueMode : MonoBehaviour
             ClearDialogueBox();
             SetDialogueBoxText();
             MakeButtonsAppear();
+            SetCharacterEmotion();
+            MakeCharacterBounce();
         }
         else
         {
@@ -144,5 +178,86 @@ public class DialogueMode : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+
+        MakeLinkButtonDisappear();
+    }
+
+    public void SetCharacterEmotion()
+    {
+        foreach (Transform emotion in Character)
+        {
+            emotion.gameObject.SetActive(false);
+        }
+
+        switch (_activeDialogueScreen.characterEmotion)
+        {
+            case "neutral":
+                CharacterNeutral.SetActive(true);
+                break;
+            case "cheerful":
+                CharacterCheerful.SetActive(true);
+                break;
+            case "thinking":
+                CharacterThinking.SetActive(true);
+                break;
+            default:
+                CharacterNeutral.SetActive(true);
+                Debug.Log($"Did not recognize the emotion called '{_activeDialogueScreen.characterEmotion}', defaulted to neutral.");
+                break;
+        }
+    }
+
+    public void MakeLinkButtonAppear()
+    {
+        _activeWebLink = _activeDialogueScreen.externalLink;
+
+        
+        if(_activeDialogueScreen.externalLinkName != null )
+        {
+            _activeWebLinkTitle = _activeDialogueScreen.externalLinkName;
+            WebLinkTitle.SetText(_activeWebLinkTitle);
+        }
+        else
+        {
+            WebLinkTitle.SetText(_activeWebLink);
+        }
+
+        Tween webLinkObjectAppear = WebLinkObject.DOLocalMove(WebLinkObjectPosition, WebLinkObjectAppearDuration);
+        webLinkObjectAppear.SetEase(Ease.OutBounce);
+        webLinkObjectAppear.Play();
+    }
+
+    public void MakeLinkButtonDisappear()
+    {
+        Tween webLinkObjectDisappear = WebLinkObject.DOLocalMove(new Vector3 { y = -600}, WebLinkObjectDisappearDuration);
+        webLinkObjectDisappear.SetEase(Ease.InBack);
+        webLinkObjectDisappear.Play();
+    }
+
+    public void GoToCurrentLink()
+    {
+        Application.OpenURL(_activeWebLink);
+    }
+
+    public void MakeCharacterBounce()
+    {
+        Sequence _wholeBounce = DOTween.Sequence();
+
+        Tween squish = Character.DOScaleY(CharacterSquishIntensity, CharacterSquishDuration);
+        Tween moveDown = Character.DOLocalMoveY(500 * CharacterSquishIntensity - 500, CharacterSquishDuration);
+        Tween unSquish = Character.DOScaleY(1, CharacterUnsquishDuration);
+        Tween moveUp = Character.DOLocalMoveY(0, CharacterUnsquishDuration);
+
+        squish.SetEase(Ease.InSine);
+        moveDown.SetEase(Ease.InSine);
+        unSquish.SetEase(Ease.OutBack);
+        moveUp.SetEase(Ease.OutBack);
+
+        _wholeBounce.Insert(0, squish);
+        _wholeBounce.Insert(0, moveDown);
+        _wholeBounce.Insert(CharacterSquishDuration, unSquish);
+        _wholeBounce.Insert(CharacterSquishDuration, moveUp);
+
+        _wholeBounce.Play();
     }
 }

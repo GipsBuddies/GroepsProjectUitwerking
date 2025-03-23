@@ -32,6 +32,7 @@ public class JsonDialogueReader : MonoBehaviour
 
         public DialogueOption[] dialogueOptions;
         public string externalLink;
+        public string externalLinkName;
     }
 
     [Serializable]
