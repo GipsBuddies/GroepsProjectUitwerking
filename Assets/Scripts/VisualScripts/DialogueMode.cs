@@ -10,7 +10,7 @@ public class DialogueMode : MonoBehaviour
 {
     public GameObject DialogueScreen;
     public JsonDialogueReader DialogueReader;
-    public ScreenTransitions LeaveDialogueMode;
+    public ScreenTransitionsImproved LeaveDialogueMode;
 
     public Transform DialogueBox;
     public TMP_Text DialogueBoxLine1;
@@ -168,7 +168,7 @@ public class DialogueMode : MonoBehaviour
         }
         else
         {
-            LeaveDialogueMode.UseCircleTransition("circle");
+            LeaveDialogueMode.CloseCircleOpenCircle();
         }
     }
 
