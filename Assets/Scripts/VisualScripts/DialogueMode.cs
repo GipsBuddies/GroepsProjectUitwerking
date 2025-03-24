@@ -95,7 +95,7 @@ public class DialogueMode : MonoBehaviour
         _activeDialogueScreenNumber = 0;
         _activeDialogueScreen = _activeDialogueSeries.dialogueScreens[_activeDialogueScreenNumber];
         
-        Debug.Log($"Current Screen number: {_activeDialogueScreenNumber + 1}/{_activeDialogueSeries.dialogueScreens.Length}");
+        Debug.Log($"Current Screen: {_activeDialogueSeries.seriesName}({_activeDialogueScreenNumber + 1}/{_activeDialogueSeries.dialogueScreens.Length})");
 
         SetDialogueBoxText();
         MakeButtonsAppear();
@@ -160,10 +160,10 @@ public class DialogueMode : MonoBehaviour
         RemoveButtons();
         _activeDialogueScreenNumber++;
 
-        Debug.Log($"Current Screen number: {_activeDialogueScreenNumber + 1}/{_activeDialogueSeries.dialogueScreens.Length}");
-
         if (_activeDialogueSeries.dialogueScreens.Length > _activeDialogueScreenNumber)
         {
+            Debug.Log($"Current Screen: {_activeDialogueSeries.seriesName}({_activeDialogueScreenNumber + 1}/{_activeDialogueSeries.dialogueScreens.Length})");
+            
             _activeDialogueScreen = _activeDialogueSeries.dialogueScreens[_activeDialogueScreenNumber];
 
             ClearDialogueBox();
