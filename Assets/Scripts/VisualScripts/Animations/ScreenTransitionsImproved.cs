@@ -6,14 +6,17 @@ using UnityEngine;
 
 public class ScreenTransitionsImproved : MonoBehaviour
 {
-    public Transform TransitionCircle;
-    public Transform TransitionSquare;
-    public GameObject TransitionCircleAsObject;
-
+    [Header("General Values")]
     public GameObject pageToClose;
     public GameObject pageToOpen;
     public float closingDuration;
     public float openingDuration;
+
+    [Header("Circle Transition Values")]
+    public Transform TransitionCircle;
+    public Transform TransitionRectangle;
+    public GameObject TransitionCircleAsObject;
+
     public Vector3 positionToCloseInOn;
     public Vector3 positionToOpenFrom;
 
@@ -41,8 +44,8 @@ public class ScreenTransitionsImproved : MonoBehaviour
 
         Tween circleScaleX = TransitionCircle.DOScaleX(1, closingDuration);
         Tween circleScaleY = TransitionCircle.DOScaleY(1, closingDuration);
-        Tween squareScaleX = TransitionSquare.DOScaleX(2300, closingDuration);
-        Tween squareScaleY = TransitionSquare.DOScaleY(2300, closingDuration);
+        Tween squareScaleX = TransitionRectangle.DOScaleX(2300, closingDuration);
+        Tween squareScaleY = TransitionRectangle.DOScaleY(2300, closingDuration);
         Tween circleMove = TransitionCircle.DOLocalMove(positionToCloseInOn, closingDuration);
 
         circleScaleX.SetEase(Ease.OutSine);
@@ -90,8 +93,8 @@ public class ScreenTransitionsImproved : MonoBehaviour
 
         Tween circleScaleX = TransitionCircle.DOScaleX(2300, openingDuration);
         Tween circleScaleY = TransitionCircle.DOScaleY(2300, openingDuration);
-        Tween squareScaleX = TransitionSquare.DOScaleX(1, openingDuration);
-        Tween squareScaleY = TransitionSquare.DOScaleY(1, openingDuration);
+        Tween squareScaleX = TransitionRectangle.DOScaleX(1, openingDuration);
+        Tween squareScaleY = TransitionRectangle.DOScaleY(1, openingDuration);
         Tween circleMove = TransitionCircle.DOLocalMove(Vector3.zero, openingDuration);
 
         circleScaleX.SetEase(Ease.InSine);

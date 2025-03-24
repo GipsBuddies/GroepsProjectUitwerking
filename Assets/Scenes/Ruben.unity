@@ -7292,13 +7292,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbd1bc5ed6160443b5d35edfc40b488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TransitionCircle: {fileID: 342779719}
-  TransitionSquare: {fileID: 1753930246}
-  TransitionCircleAsObject: {fileID: 1886543056}
   pageToClose: {fileID: 1446543599}
   pageToOpen: {fileID: 1959753501}
   closingDuration: 1
   openingDuration: 0.5
+  TransitionCircle: {fileID: 342779719}
+  TransitionRectangle: {fileID: 1753930246}
+  TransitionCircleAsObject: {fileID: 1886543056}
   positionToCloseInOn: {x: -530, y: 50, z: 0}
   positionToOpenFrom: {x: -100, y: 0, z: 0}
 --- !u!1 &803977866
@@ -19522,13 +19522,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbd1bc5ed6160443b5d35edfc40b488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TransitionCircle: {fileID: 342779719}
-  TransitionSquare: {fileID: 1753930246}
-  TransitionCircleAsObject: {fileID: 1886543056}
   pageToClose: {fileID: 1959753501}
   pageToOpen: {fileID: 1446543599}
   closingDuration: 1
   openingDuration: 0.5
+  TransitionCircle: {fileID: 342779719}
+  TransitionRectangle: {fileID: 1753930246}
+  TransitionCircleAsObject: {fileID: 1886543056}
   positionToCloseInOn: {x: -300, y: 200, z: 0}
   positionToOpenFrom: {x: -550, y: 50, z: 0}
 --- !u!4 &2091976271

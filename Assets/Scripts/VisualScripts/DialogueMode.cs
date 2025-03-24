@@ -8,49 +8,55 @@ using static JsonDialogueReader;
 
 public class DialogueMode : MonoBehaviour
 {
+    [Header("General")]
     public GameObject DialogueScreen;
     public JsonDialogueReader DialogueReader;
     public ScreenTransitionsImproved LeaveDialogueMode;
 
+    [Header("Character")]
+    public Transform Character;
+    public GameObject CharacterNeutral;
+    public GameObject CharacterCheerful;
+    public GameObject CharacterThinking;
+    public float CharacterSquishIntensity;
+    public float CharacterSquishDuration;
+    public float CharacterUnsquishDuration;
+    public Vector3 CharacterPosition;
+    public float CharacterMoveDuration;
+
+    [Header("Dialogue Box")]
     public Transform DialogueBox;
     public TMP_Text DialogueBoxLine1;
     public TMP_Text DialogueBoxLine2;
     public TMP_Text DialogueBoxLine3;
-    public Transform Character;
-    public GameObject NextButton;
-    public GameObject ButtonPrefab;
-    public Transform ButtonParent;
-    public Transform WebLinkObject;
-    public TMP_Text WebLinkTitle;
-
-    public GameObject CharacterNeutral;
-    public GameObject CharacterCheerful;
-    public GameObject CharacterThinking;
-
     public Vector3 DialogueBoxPosition;
     public float DialogueBoxMoveDuration;
-    public Vector3 CharacterPosition;
-    public float CharacterMoveDuration;
-    public Vector3 WebLinkObjectPosition;
-    public float WebLinkObjectAppearDuration;
-    public float WebLinkObjectDisappearDuration;
 
-    public float CharacterSquishIntensity;
-    public float CharacterSquishDuration;
-    public float CharacterUnsquishDuration;
-
+    [Header("Dialogue Option Buttons")]
+    public GameObject ButtonPrefab;
+    public Transform ButtonParent;
     public float FirstButtonX;
     public float FirstButtonY;
     public float ButtonSpacing;
     public float ButtonAnimationDuration;
     public float TimeBetweenButtonsAppearing;
 
+    [Header("Next Screen Button")]
+    public GameObject NextButton;
+
+    [Header("Web Link Utility")]
+    public Transform WebLinkObject;
+    public TMP_Text WebLinkTitle;
+    public Vector3 WebLinkObjectPosition;
+    public float WebLinkObjectAppearDuration;
+    public float WebLinkObjectDisappearDuration;
+
+    // Private Fields
     private DialogueSeries _activeDialogueSeries;
-    private int _activeDialogueScreenNumber;
     private DialogueScreen _activeDialogueScreen;
+    private int _activeDialogueScreenNumber;
     private string _activeWebLink;
     private string _activeWebLinkTitle;
-
 
     private void OnEnable()
     {
