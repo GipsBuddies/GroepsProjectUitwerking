@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ScreenHandler : MonoBehaviour
 {
+    public LoadHandler loadHandler;
+
     public GameObject startScreen;
     public GameObject homeScreenRouteA;
     public GameObject homeScreenRouteB;
@@ -28,6 +30,7 @@ public class ScreenHandler : MonoBehaviour
     public GameObject loginScreen;
     public GameObject registerScreen;
     public GameObject accountScreen;
+    public GameObject appointmentScreen;
 
     public bool loggedIn;
     public bool followsRouteB;
@@ -64,6 +67,7 @@ public class ScreenHandler : MonoBehaviour
         loginScreen.SetActive(false);
         registerScreen.SetActive(false);
         accountScreen.SetActive(false);
+        appointmentScreen.SetActive(false);
 
         onHomeScreen = false;
     }
@@ -237,6 +241,25 @@ public class ScreenHandler : MonoBehaviour
         {
             GoToLoginScreen();
         }
+    }
+
+    public void LoadAppointmentScreen()
+    {
+        if (loggedIn)
+        {
+            loadHandler.LoadAppointmentScreen();
+        }
+        else
+        {
+            GoToLoginScreen();
+        }
+    }
+
+    public void GoToAppointmentScreen()
+    {
+        ResetScreens();
+        menubar.SetActive(true);
+        appointmentScreen.SetActive(true);
     }
 
     #endregion
