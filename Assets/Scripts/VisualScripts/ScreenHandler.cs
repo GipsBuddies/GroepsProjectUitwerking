@@ -34,8 +34,6 @@ public class ScreenHandler : MonoBehaviour
 
     public bool loggedIn;
     public bool followsRouteB;
-    private bool onHomeScreen;
-
 
     void Start()
     {
@@ -68,8 +66,6 @@ public class ScreenHandler : MonoBehaviour
         registerScreen.SetActive(false);
         accountScreen.SetActive(false);
         appointmentScreen.SetActive(false);
-
-        onHomeScreen = false;
     }
 
     #region MainScenes
@@ -82,26 +78,17 @@ public class ScreenHandler : MonoBehaviour
 
     public void GoToHomeScreen()
     {
-        if (onHomeScreen)
+        if (followsRouteB)
         {
-            GoToStartScreen();
-            onHomeScreen = false;
+            ResetScreens();
+            menubar.SetActive(true);
+            homeScreenRouteB.SetActive(true);
         }
         else
         {
-            if (followsRouteB)
-            {
-                ResetScreens();
-                menubar.SetActive(true);
-                homeScreenRouteB.SetActive(true);
-            }
-            else
-            {
-                ResetScreens();
-                menubar.SetActive(true);
-                homeScreenRouteA.SetActive(true);
-            }
-            onHomeScreen = true;
+            ResetScreens();
+            menubar.SetActive(true);
+            homeScreenRouteA.SetActive(true);
         }
     }
 

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ApiConnector : MonoBehaviour
 {
     public ScreenHandler screenHandler;
+    public LoadHandler loadHandler;
 
     public List<Appointment> appointments;
 
@@ -99,7 +100,8 @@ public class ApiConnector : MonoBehaviour
                     Debug.Log($"Afspraak: {appointment.Reason}");
                 }
 
-                screenHandler.GoToAppointmentScreen();
+                loadHandler.ContinueLoadingAppointmentScreen();
+
                 // TODO: Handle succes scenario.
                 break;
             case WebRequestError errorResponse:
