@@ -15,6 +15,26 @@ public class ButtonBehaviour : MonoBehaviour
     public float NewIconSize;
     public float MaxTilt;
 
+    private void OnDisable()
+    {
+        if(ButtonToAnimate != null)
+        {
+            ButtonToAnimate.localScale = Vector3.one;
+
+            if(AltImage != null )
+            {
+                DeactivateAltImage();
+            }
+
+            if(IconToAnimate != null )
+            {
+                IconToAnimate.localScale = Vector3.one;
+            }
+
+            ButtonToAnimate.Rotate(Vector3.zero);
+        }
+    }
+
     /// <summary>
     /// Laat de knop geleidelijk groeien of krimpen.
     /// 
