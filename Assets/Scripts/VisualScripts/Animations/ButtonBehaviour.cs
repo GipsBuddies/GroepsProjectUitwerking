@@ -19,7 +19,7 @@ public class ButtonBehaviour : MonoBehaviour
     {
         if(ButtonToAnimate != null)
         {
-            ButtonToAnimate.localScale = Vector3.one;
+            ButtonToAnimate.localScale = new Vector3(RegularButtonSize, RegularButtonSize, 1);
 
             if(AltImage != null )
             {
