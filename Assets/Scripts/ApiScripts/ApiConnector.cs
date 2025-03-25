@@ -10,7 +10,7 @@ public class ApiConnector : MonoBehaviour
     public ScreenHandler screenHandler;
     public LoadHandler loadHandler;
 
-    public List<Appointment> appointments;
+    public List<Appointment> appointments = new List<Appointment>();
 
     [Header("Dependencies")]
     public UserApiClient userApiClient;
@@ -48,7 +48,7 @@ public class ApiConnector : MonoBehaviour
             case WebRequestData<string> dataResponse:
                 Debug.Log("login succes");
                 screenHandler.loggedIn = true;
-                screenHandler.GoToHomeScreen();
+                screenHandler.GoToStartScreen();
                 break;
             case WebRequestError errorResponse:
                 Debug.Log($"Eror: {errorResponse}");
@@ -92,13 +92,16 @@ public class ApiConnector : MonoBehaviour
         switch (webRequestResponse)
         {
             case WebRequestData<List<Appointment>> dataResponse:
-                List<Appointment> appointments = dataResponse.Data;
                 appointments.Clear();
-                
-                foreach (var appointment in appointments)
+                foreach (var item in dataResponse.Data)
                 {
-                    Debug.Log($"Afspraak: {appointment.Reason}");
+                    Appointment a = new Appointment();
+                    a.Date = item.Date;
+                    a.Reason = item.Reason;
+                    // eventueel extra velden kopiëren
+                    appointments.Add(a);
                 }
+
 
                 loadHandler.ContinueLoadingAppointmentScreen();
 

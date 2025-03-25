@@ -2,8 +2,8 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class Appointment : MonoBehaviour
+public class Appointment
 {
-    public string Date;
+    public DateTime Date;
     public string Reason;
 }

@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using Newtonsoft.Json;
 
 public class AppointmentApiClient : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class AppointmentApiClient : MonoBehaviour
     public async Awaitable<IWebRequestReponse> CreateAppointment(Appointment appointment)
     {
         string route = "/appointments";
-        string data = JsonUtility.ToJson(appointment);
+        string data = JsonConvert.SerializeObject(appointment);
 
         IWebRequestReponse webRequestResponse = await webClient.SendPostRequest(route, data);
         return ParseEnvironment2DResponse(webRequestResponse);
@@ -36,7 +37,7 @@ public class AppointmentApiClient : MonoBehaviour
         {
             case WebRequestData<string> data:
                 Debug.Log("Response data raw: " + data.Data);
-                Appointment appointment = JsonUtility.FromJson<Appointment>(data.Data);
+                Appointment appointment = JsonConvert.DeserializeObject<Appointment>(data.Data);
                 WebRequestData<Appointment> parsedWebRequestData = new WebRequestData<Appointment>(appointment);
                 return parsedWebRequestData;
             default:
@@ -50,13 +51,11 @@ public class AppointmentApiClient : MonoBehaviour
         {
             case WebRequestData<string> data:
                 Debug.Log("Response data raw: " + data.Data);
-                List<Appointment> appointments = JsonHelper.ParseJsonArray<Appointment>(data.Data);
+                List<Appointment> appointments = JsonConvert.DeserializeObject<List<Appointment>>(data.Data);
                 WebRequestData<List<Appointment>> parsedWebRequestData = new WebRequestData<List<Appointment>>(appointments);
                 return parsedWebRequestData;
             default:
                 return webRequestResponse;
         }
     }
-
 }
-

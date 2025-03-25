@@ -47,18 +47,37 @@ public class LoadHandler : MonoBehaviour
     public void ContinueLoadingAppointmentScreen()
     {
         LoadDateTextsOnCalendar();
+        Debug.Log($"AANTAL AFSPRAKEN OP ACCOUNT:{apiConnector.appointments.Count}");
 
         foreach (Appointment appointment in apiConnector.appointments)
         {
+            DateTime appointmentDate = appointment.Date;
             foreach (DateTime date in datesOnCalendar)
             {
-                if (appointment.Date == Convert.ToString(date))
+                
+                if (appointmentDate.Date == date.Date)
                 {
                     Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                    Debug.Log("JE MOEILIJKE STUKJE CODE WERKT!");
+                }
+                else
+                {
+                    Debug.Log($"{appointmentDate.Date} != {date.Date}");
                 }
             }
         }
 
+        Debug.Log("HIJ IS DOOR DE 2 foreach heen gegaan");
         screenHandler.GoToAppointmentScreen();
     }
 

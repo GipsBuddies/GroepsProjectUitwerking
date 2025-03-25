@@ -22,7 +22,7 @@ public class AppointmentInputHandler : MonoBehaviour
         int hours = Convert.ToInt32(inputHours.text);
         int minutes = Convert.ToInt32(inputMinutes.text);
         DateTime date = new DateTime(year, month, day, hours, minutes, 0);
-        appointment.Date = date.ToString("O");
+        appointment.Date = date;
         appointment.Reason = inputReason.text;
 
         Debug.Log($"appointment.Date::: {appointment.Date}");
@@ -39,7 +39,8 @@ public class AppointmentInputHandler : MonoBehaviour
         inputHours.text = "";
         inputMinutes.text = "";
         inputReason.text = "";
-        appointment.Date = "";
+
+        appointment.Date = default;
         appointment.Reason = "";
     }
 }
