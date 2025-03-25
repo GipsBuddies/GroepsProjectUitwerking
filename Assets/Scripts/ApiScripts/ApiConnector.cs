@@ -126,6 +126,7 @@ public class ApiConnector : MonoBehaviour
         {
             case WebRequestData<Appointment> dataResponse:
                 Debug.Log("Created appointment");
+                screenHandler.LoadAppointmentScreen();
                 break;
             case WebRequestError errorResponse:
                 string errorMessage = errorResponse.ErrorMessage;
@@ -138,7 +139,7 @@ public class ApiConnector : MonoBehaviour
     }
 
     [ContextMenu("Appointment/Delete")]
-    public async void DeleteEnvironment2D(string appointmentId)
+    public async void DeleteAppointment(string appointmentId)
     {
         IWebRequestReponse webRequestResponse = await appointmentApiClient.DeleteAppointment(appointmentId);
 
