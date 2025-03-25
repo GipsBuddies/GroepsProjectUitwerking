@@ -9,12 +9,19 @@ public class ApiConnector : MonoBehaviour
 {
     public ScreenHandler screenHandler;
     public LoadHandler loadHandler;
+    public bool isRouteB;
+    private bool firstTimeLoggedIn = false;
 
     public List<Appointment> appointments = new List<Appointment>();
 
     [Header("Dependencies")]
     public UserApiClient userApiClient;
     public AppointmentApiClient appointmentApiClient;
+    public ChoiceRouteApiClient choiceRouteApiClient;
+
+    [HideInInspector]
+    public ChoiceRoute currentChoiceRoute;
+
 
     #region Login
 
@@ -27,6 +34,7 @@ public class ApiConnector : MonoBehaviour
         {
             case WebRequestData<string> dataResponse:
                 Debug.Log("Register succes");
+                firstTimeLoggedIn = true;
                 screenHandler.GoToLoginScreen();
                 break;
             case WebRequestError errorResponse:
@@ -48,6 +56,19 @@ public class ApiConnector : MonoBehaviour
             case WebRequestData<string> dataResponse:
                 Debug.Log("login succes");
                 screenHandler.loggedIn = true;
+
+                if (firstTimeLoggedIn)
+                {
+                    ChoiceRoute choiceRoute = new ChoiceRoute();
+                    choiceRoute.Path = isRouteB;
+                    choiceRoute.Begining = false;
+                    choiceRoute.Middel = false;
+                    choiceRoute.Finish = false;
+
+                    CreateChoiceRoute(choiceRoute);
+                    firstTimeLoggedIn = false;
+                }
+
                 screenHandler.GoToStartScreen();
                 break;
             case WebRequestError errorResponse:
@@ -162,5 +183,84 @@ public class ApiConnector : MonoBehaviour
     }
 
     #endregion
+
+#region ChoiceRoute
+
+[ContextMenu("ChoiceRoute/Read")]
+public async void ReadChoiceRoute()
+{
+    IWebRequestReponse webRequestResponse = await choiceRouteApiClient.ReadChoiceRoute();
+
+    switch (webRequestResponse)
+    {
+        case WebRequestData<ChoiceRoute> dataResponse:
+            currentChoiceRoute = dataResponse.Data;
+            Debug.Log("Read ChoiceRoute succesvol");
+                if (dataResponse.Data.Path)
+                {
+                    screenHandler.ApiGoToHomeScreenB();
+                }
+                else if (!dataResponse.Data.Path)
+                {
+                    screenHandler.ApiGoToHomeScreenA();
+                }
+                    // eventueel: update UI hier
+                    break;
+        case WebRequestError errorResponse:
+            Debug.Log("Fout bij het ophalen van ChoiceRoute: " + errorResponse.ErrorMessage);
+            break;
+        default:
+            throw new NotImplementedException("No implementation for webRequestResponse of class: " + webRequestResponse.GetType());
+    }
+}
+
+[ContextMenu("ChoiceRoute/Create")]
+public async void CreateChoiceRoute(ChoiceRoute newChoiceRoute)
+{
+    IWebRequestReponse webRequestResponse = await choiceRouteApiClient.CreateChoiceRoute(newChoiceRoute);
+
+    switch (webRequestResponse)
+    {
+        case WebRequestData<ChoiceRoute> dataResponse:
+            currentChoiceRoute = dataResponse.Data;
+            Debug.Log("ChoiceRoute succesvol aangemaakt");
+            break;
+        case WebRequestError errorResponse:
+            Debug.Log("Fout bij het aanmaken van ChoiceRoute: " + errorResponse.ErrorMessage);
+            break;
+        default:
+            throw new NotImplementedException("No implementation for webRequestResponse of class: " + webRequestResponse.GetType());
+    }
+}
+
+[ContextMenu("ChoiceRoute/Update")]
+public async void UpdateChoiceRoute(ChoiceRoute updatedChoiceRoute)
+{
+    if (updatedChoiceRoute == null)
+    {
+        Debug.LogWarning("UpdateChoiceRoute: Geen geldig ChoiceRoute object opgegeven.");
+        return;
+    }
+
+    // De backend koppelt de juiste user en route via de token.
+    // Je hoeft geen Id meer mee te geven!
+    IWebRequestReponse webRequestResponse = await choiceRouteApiClient.UpdateChoiceRouteForCurrentUser(updatedChoiceRoute);
+
+    switch (webRequestResponse)
+    {
+        case WebRequestData<ChoiceRoute> dataResponse:
+            currentChoiceRoute = dataResponse.Data;
+            Debug.Log("ChoiceRoute succesvol bijgewerkt");
+            break;
+        case WebRequestError errorResponse:
+            Debug.Log("Fout bij het bijwerken van ChoiceRoute: " + errorResponse.ErrorMessage);
+            break;
+        default:
+            throw new NotImplementedException("No implementation for webRequestResponse of class: " + webRequestResponse.GetType());
+    }
+}
+
+#endregion
+
 
 }

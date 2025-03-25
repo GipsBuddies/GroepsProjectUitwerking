@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 // This class contains methods used to navigate through the unity program.
@@ -7,6 +8,7 @@ using UnityEngine;
 public class ScreenHandler : MonoBehaviour
 {
     public LoadHandler loadHandler;
+    public ApiConnector apiConnector;
 
     public GameObject startScreen;
     public GameObject homeScreenRouteA;
@@ -78,11 +80,9 @@ public class ScreenHandler : MonoBehaviour
 
     public void GoToHomeScreen()
     {
-        if (followsRouteB)
+        if (loggedIn)
         {
-            ResetScreens();
-            menubar.SetActive(true);
-            homeScreenRouteB.SetActive(true);
+            apiConnector.ReadChoiceRoute();
         }
         else
         {
@@ -90,6 +90,20 @@ public class ScreenHandler : MonoBehaviour
             menubar.SetActive(true);
             homeScreenRouteA.SetActive(true);
         }
+    }
+
+    public void ApiGoToHomeScreenA()
+    {
+        ResetScreens();
+        menubar.SetActive(true);
+        homeScreenRouteA.SetActive(true);
+    }
+
+    public void ApiGoToHomeScreenB()
+    {
+        ResetScreens();
+        menubar.SetActive(true);
+        homeScreenRouteB.SetActive(true);
     }
 
     #endregion

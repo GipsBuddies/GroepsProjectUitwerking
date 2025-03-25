@@ -8,6 +8,7 @@ public class UserInputHandler : MonoBehaviour
 {
     public ApiConnector apiConnector;
     public User user;
+    public User user2;
 
     [SerializeField] TMP_InputField usernameLoginInputField;
     [SerializeField] TMP_InputField passwordLoginInputField;
