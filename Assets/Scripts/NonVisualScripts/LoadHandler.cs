@@ -498,6 +498,7 @@ public class LoadHandler : MonoBehaviour
         IsAppointmentWithinMonth = false;
 
         todayAppointmentButton.SetActive(false);
+        dateNextAppointment.text = "Nog geen afspraken";
         
         dateAppointment1.SetActive(false);
         dateAppointment2.SetActive(false);

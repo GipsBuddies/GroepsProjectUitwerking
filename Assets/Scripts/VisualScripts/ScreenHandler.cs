@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using NUnit.Framework;
 using UnityEngine;
 
 // This class contains methods used to navigate through the unity program.
@@ -30,6 +31,7 @@ public class ScreenHandler : MonoBehaviour
 
     public GameObject questionScreen;
     public GameObject loginScreen;
+    public GameObject afterLoginScreen;
     public GameObject registerScreen;
     public GameObject accountScreen;
     public GameObject appointmentScreen;
@@ -65,6 +67,7 @@ public class ScreenHandler : MonoBehaviour
 
         questionScreen.SetActive(false);
         loginScreen.SetActive(false);
+        afterLoginScreen.SetActive(false);
         registerScreen.SetActive(false);
         accountScreen.SetActive(false);
         appointmentScreen.SetActive(false);
@@ -78,11 +81,11 @@ public class ScreenHandler : MonoBehaviour
         startScreen.SetActive(true);
     }
 
-    public void GoToHomeScreen()
+    public async void GoToHomeScreen()
     {
         if (loggedIn)
         {
-            apiConnector.ReadChoiceRoute();
+            await apiConnector.ReadChoiceRoute();
         }
         else
         {
@@ -221,6 +224,13 @@ public class ScreenHandler : MonoBehaviour
         ResetScreens();
         menubar.SetActive(true);
         loginScreen.SetActive(true);
+    }
+
+    public void GoToAfterLoginScreen()
+    {
+        ResetScreens();
+        menubar.SetActive(true);
+        afterLoginScreen.SetActive(true);
     }
 
     public void GoToRegisterScreen()

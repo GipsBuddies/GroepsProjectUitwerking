@@ -9,8 +9,7 @@ public class ApiConnector : MonoBehaviour
 {
     public ScreenHandler screenHandler;
     public LoadHandler loadHandler;
-    public bool isRouteB;
-    private bool firstTimeLoggedIn = false;
+    public bool isRouteB = false;
 
     public List<Appointment> appointments = new List<Appointment>();
 
@@ -34,7 +33,6 @@ public class ApiConnector : MonoBehaviour
         {
             case WebRequestData<string> dataResponse:
                 Debug.Log("Register succes");
-                firstTimeLoggedIn = true;
                 screenHandler.GoToLoginScreen();
                 break;
             case WebRequestError errorResponse:
@@ -57,19 +55,9 @@ public class ApiConnector : MonoBehaviour
                 Debug.Log("login succes");
                 screenHandler.loggedIn = true;
 
-                if (firstTimeLoggedIn)
-                {
-                    ChoiceRoute choiceRoute = new ChoiceRoute();
-                    choiceRoute.Path = isRouteB;
-                    choiceRoute.Begining = false;
-                    choiceRoute.Middel = false;
-                    choiceRoute.Finish = false;
+                await ReadChoiceRoute();
 
-                    CreateChoiceRoute(choiceRoute);
-                    firstTimeLoggedIn = false;
-                }
-
-                screenHandler.GoToStartScreen();
+                screenHandler.GoToAfterLoginScreen();
                 break;
             case WebRequestError errorResponse:
                 Debug.Log($"Eror: {errorResponse}");
@@ -187,7 +175,7 @@ public class ApiConnector : MonoBehaviour
 #region ChoiceRoute
 
 [ContextMenu("ChoiceRoute/Read")]
-public async void ReadChoiceRoute()
+public async Task ReadChoiceRoute()
 {
     IWebRequestReponse webRequestResponse = await choiceRouteApiClient.ReadChoiceRoute();
 
@@ -196,16 +184,25 @@ public async void ReadChoiceRoute()
         case WebRequestData<ChoiceRoute> dataResponse:
             currentChoiceRoute = dataResponse.Data;
             Debug.Log("Read ChoiceRoute succesvol");
-                if (dataResponse.Data.Path)
-                {
-                    screenHandler.ApiGoToHomeScreenB();
-                }
-                else if (!dataResponse.Data.Path)
-                {
-                    screenHandler.ApiGoToHomeScreenA();
-                }
-                    // eventueel: update UI hier
-                    break;
+
+            if (dataResponse.Data != null)
+            {
+                Debug.Log("Data is geen null dus choiseroute is al aangemaakt");  
+                break;
+            }
+            else if (dataResponse.Data == null)
+            {
+                Debug.Log("Data is null dus choiseroute moet nog aangemaakt worden en gaat nu gebeuren.");
+                ChoiceRoute choiceRoute = new ChoiceRoute();
+                choiceRoute.Path = false;
+                choiceRoute.Begining = false;
+                choiceRoute.Middel = false;
+                choiceRoute.Finish = false;
+                CreateChoiceRoute(choiceRoute);
+                break;
+            }
+
+            break;
         case WebRequestError errorResponse:
             Debug.Log("Fout bij het ophalen van ChoiceRoute: " + errorResponse.ErrorMessage);
             break;
@@ -242,8 +239,6 @@ public async void UpdateChoiceRoute(ChoiceRoute updatedChoiceRoute)
         return;
     }
 
-    // De backend koppelt de juiste user en route via de token.
-    // Je hoeft geen Id meer mee te geven!
     IWebRequestReponse webRequestResponse = await choiceRouteApiClient.UpdateChoiceRouteForCurrentUser(updatedChoiceRoute);
 
     switch (webRequestResponse)
