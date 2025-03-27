@@ -198,6 +198,9 @@ public async Task ReadChoiceRoute()
                 choiceRoute.Begining = false;
                 choiceRoute.Middel = false;
                 choiceRoute.Finish = false;
+                choiceRoute.NamePatient = "";
+                choiceRoute.BirthDate = new DateTime(2015, 1, 1);
+                choiceRoute.NameDoctor = "";
                 CreateChoiceRoute(choiceRoute);
                 break;
             }
