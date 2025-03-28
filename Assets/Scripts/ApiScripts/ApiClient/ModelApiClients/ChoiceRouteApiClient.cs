@@ -15,10 +15,13 @@ public class ChoiceRouteApiClient : MonoBehaviour
         return ParseChoiceRouteResponse(response);
     }
 
-    public async Awaitable<IWebRequestReponse> CreateChoiceRoute(ChoiceRoute choiceRoute)
+    public async Awaitable<IWebRequestReponse> CreateChoiceRoute(ChoiceRouteCreateModel choiceRoute)
     {
-        // Serialize zonder Id/UserId (die zitten ook niet in je model nu – perfect)
-        string data = JsonConvert.SerializeObject(choiceRoute);
+        string data = JsonConvert.SerializeObject(choiceRoute, new JsonSerializerSettings
+        {
+            DateFormatString = "yyyy-MM-ddTHH:mm:ss"
+        });
+
         IWebRequestReponse response = await webClient.SendPostRequest(Route, data);
         return ParseChoiceRouteResponse(response);
     }

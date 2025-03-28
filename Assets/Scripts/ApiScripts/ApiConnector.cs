@@ -9,6 +9,7 @@ public class ApiConnector : MonoBehaviour
 {
     public ScreenHandler screenHandler;
     public LoadHandler loadHandler;
+    public LoadAfterLoginHandler loadAfterLoginHandler;
     public bool isRouteB = false;
 
     public List<Appointment> appointments = new List<Appointment>();
@@ -20,6 +21,7 @@ public class ApiConnector : MonoBehaviour
 
     [HideInInspector]
     public ChoiceRoute currentChoiceRoute;
+    
 
 
     #region Login
@@ -55,9 +57,18 @@ public class ApiConnector : MonoBehaviour
                 Debug.Log("login succes");
                 screenHandler.loggedIn = true;
 
+                ChoiceRoute choiceRoute = new ChoiceRoute();
+                choiceRoute.Path = false;
+                choiceRoute.Begining = false;
+                choiceRoute.Middel = false;
+                choiceRoute.Finish = false;
+                choiceRoute.NamePatient = "";
+                choiceRoute.BirthDate = new DateTime(1900, 1, 1);
+                choiceRoute.NameDoctor = "";
+
                 await ReadChoiceRoute();
 
-                screenHandler.GoToAfterLoginScreen();
+                loadAfterLoginHandler.LoadAfterLoginScreen();
                 break;
             case WebRequestError errorResponse:
                 Debug.Log($"Eror: {errorResponse}");
@@ -94,7 +105,7 @@ public class ApiConnector : MonoBehaviour
     #region Appoinment
 
     [ContextMenu("Appointment/Read all")]
-    public async Task ReadAppointments()
+    public async Task ReadAppointments(bool IsOnAfterLoginScreen)
     {
         IWebRequestReponse webRequestResponse = await appointmentApiClient.ReadAppointments();
 
@@ -107,12 +118,11 @@ public class ApiConnector : MonoBehaviour
                     Appointment a = new Appointment();
                     a.Date = item.Date;
                     a.Reason = item.Reason;
-                    // eventueel extra velden kopiëren
                     appointments.Add(a);
                 }
 
 
-                loadHandler.ContinueLoadingAppointmentScreen();
+                loadHandler.ContinueLoadingAppointmentScreen(IsOnAfterLoginScreen);
 
                 // TODO: Handle succes scenario.
                 break;
@@ -193,15 +203,20 @@ public async Task ReadChoiceRoute()
             else if (dataResponse.Data == null)
             {
                 Debug.Log("Data is null dus choiseroute moet nog aangemaakt worden en gaat nu gebeuren.");
-                ChoiceRoute choiceRoute = new ChoiceRoute();
-                choiceRoute.Path = false;
-                choiceRoute.Begining = false;
-                choiceRoute.Middel = false;
-                choiceRoute.Finish = false;
-                choiceRoute.NamePatient = "";
-                choiceRoute.BirthDate = new DateTime(2015, 1, 1);
-                choiceRoute.NameDoctor = "";
-                CreateChoiceRoute(choiceRoute);
+                
+                 ChoiceRouteCreateModel newChoiceRoute = new ChoiceRouteCreateModel
+                {
+                    Path = false,
+                    Begining = false,
+                    Middel = false,
+                    Finish = false,
+                    NamePatient = "",
+                    BirthDate = new DateTime(1900, 1, 1),
+                    NameDoctor = ""
+                };
+
+                await CreateChoiceRoute(newChoiceRoute);
+
                 break;
             }
 
@@ -215,15 +230,16 @@ public async Task ReadChoiceRoute()
 }
 
 [ContextMenu("ChoiceRoute/Create")]
-public async void CreateChoiceRoute(ChoiceRoute newChoiceRoute)
+public async Task CreateChoiceRoute(ChoiceRouteCreateModel ChoiceRoute)
 {
-    IWebRequestReponse webRequestResponse = await choiceRouteApiClient.CreateChoiceRoute(newChoiceRoute);
+    IWebRequestReponse webRequestResponse = await choiceRouteApiClient.CreateChoiceRoute(ChoiceRoute);
 
     switch (webRequestResponse)
     {
         case WebRequestData<ChoiceRoute> dataResponse:
             currentChoiceRoute = dataResponse.Data;
             Debug.Log("ChoiceRoute succesvol aangemaakt");
+            await ReadChoiceRoute();
             break;
         case WebRequestError errorResponse:
             Debug.Log("Fout bij het aanmaken van ChoiceRoute: " + errorResponse.ErrorMessage);
@@ -234,7 +250,7 @@ public async void CreateChoiceRoute(ChoiceRoute newChoiceRoute)
 }
 
 [ContextMenu("ChoiceRoute/Update")]
-public async void UpdateChoiceRoute(ChoiceRoute updatedChoiceRoute)
+public async Task UpdateChoiceRoute(ChoiceRoute updatedChoiceRoute)
 {
     if (updatedChoiceRoute == null)
     {

@@ -86,6 +86,15 @@ public class ScreenHandler : MonoBehaviour
         if (loggedIn)
         {
             await apiConnector.ReadChoiceRoute();
+
+            if (apiConnector.currentChoiceRoute.Path)
+            {
+                ApiGoToHomeScreenB();
+            }
+            else
+            {
+                ApiGoToHomeScreenA();
+            }
         }
         else
         {
@@ -228,9 +237,17 @@ public class ScreenHandler : MonoBehaviour
 
     public void GoToAfterLoginScreen()
     {
-        ResetScreens();
-        menubar.SetActive(true);
-        afterLoginScreen.SetActive(true);
+        if (loggedIn)
+        {
+            ResetScreens();
+            menubar.SetActive(true);
+            afterLoginScreen.SetActive(true);
+        }
+        else
+        {
+            GoToLoginScreen();  
+        }
+        
     }
 
     public void GoToRegisterScreen()
@@ -254,11 +271,11 @@ public class ScreenHandler : MonoBehaviour
         }
     }
 
-    public void LoadAppointmentScreen()
+    public async void LoadAppointmentScreen()
     {
         if (loggedIn)
         {
-            loadHandler.LoadAppointmentScreen();
+            await loadHandler.LoadAppointmentScreen(false);
         }
         else
         {

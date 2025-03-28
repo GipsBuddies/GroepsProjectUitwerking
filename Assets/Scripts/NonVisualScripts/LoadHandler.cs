@@ -6,11 +6,15 @@ using System;
 using Unity.VisualScripting;
 using System.Collections.Generic;
 using UnityEditor.PackageManager.Requests;
+using System.Threading.Tasks;
 
 public class LoadHandler : MonoBehaviour
 {
     public ApiConnector apiConnector;
     public ScreenHandler screenHandler;
+
+    //for loadafterloginhandler
+    public TMP_Text loadAfterLoginHandlerDateLastAppointmenttext;
 
     private List<DateTime> datesOnCalendar = new List<DateTime>();
     private bool IsNewestAppointmentToday;
@@ -173,12 +177,12 @@ public class LoadHandler : MonoBehaviour
     public TMP_Text dateTitle25;
     public TMP_Text dateTime25;
 
-    public async void LoadAppointmentScreen()
+    public async Task LoadAppointmentScreen(bool IsOnAfterLoginScreen)
     {
-        await apiConnector.ReadAppointments();
+        await apiConnector.ReadAppointments(IsOnAfterLoginScreen);
     }
 
-    public void ContinueLoadingAppointmentScreen()
+    public void ContinueLoadingAppointmentScreen(bool IsOnAfterLoginScreen)
     {
         ResetSetAppointments();
         LoadDateTextsOnCalendar();
@@ -188,8 +192,12 @@ public class LoadHandler : MonoBehaviour
         {
             DateTime closestTimeToToday = apiConnector.appointments[0].Date;
         }
-    
-        DateTime today = DateTime.Today;
+        else if (apiConnector.appointments.Count == 0)
+        {
+            loadAfterLoginHandlerDateLastAppointmenttext.text = "Nog niet gepland";
+        }
+
+            DateTime today = DateTime.Today;
         foreach (Appointment appointment in apiConnector.appointments)
         {
             IsAppointmentWithinMonth = false;
@@ -226,6 +234,7 @@ public class LoadHandler : MonoBehaviour
                         {
                             TimeSpan differenceInTime = appointment.Date - DateTime.Now;
                             dateNextAppointment.text = $"Uw volgende afspraak is over {differenceInTime.Days} dagen en {differenceInTime.Hours} uur.";
+                            loadAfterLoginHandlerDateLastAppointmenttext.text = $"{differenceInTime.Days}d, {differenceInTime.Hours}u";
                         }
                     }
 
@@ -395,8 +404,11 @@ public class LoadHandler : MonoBehaviour
                 //apiConnector.DeleteAppointment(appointment.Id);
             }
         }
-        Debug.Log("HIJ IS DOOR DE 2 foreach heen gegaan");
-        screenHandler.GoToAppointmentScreen();
+
+        if (!IsOnAfterLoginScreen)
+        {
+            screenHandler.GoToAppointmentScreen();
+        }
     }
 
     public void LoadDateTextsOnCalendar()
