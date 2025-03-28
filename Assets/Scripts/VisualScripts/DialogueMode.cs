@@ -12,6 +12,7 @@ public class DialogueMode : MonoBehaviour
     public GameObject DialogueScreen;
     public JsonDialogueReader DialogueReader;
     public ScreenTransitionsImproved LeaveDialogueMode;
+    public SeriesToStartWith SeriesToStart;
 
     [Header("Character")]
     public Transform Character;
@@ -60,7 +61,7 @@ public class DialogueMode : MonoBehaviour
 
     private void OnEnable()
     {
-        SetDialogueSeries("opening");
+        SetDialogueSeries(SeriesToStart.SeriesName);
 
         MoveCharacterInFromLeft();
         MoveDialogueBoxInFromBelow();
