@@ -20,6 +20,9 @@ public class AvatarEditor : MonoBehaviour
     [Header("Pants")]
     public GameObject Jeans;
 
+    [Header("Shoes")]
+    public GameObject Sneakers;
+
     [Header("Casts")]
     public GameObject LeftArmCast;
     public GameObject LeftArmCastColor;
@@ -27,6 +30,28 @@ public class AvatarEditor : MonoBehaviour
     public GameObject RightArmCastColor;
     public GameObject LeftLegCast;
     public GameObject RightLegCast;
+
+
+    public void ChangeHairStyle(int style)
+    {
+        dataToSave.hairStyle = style;
+
+        switch(style)
+        {
+            case 1:
+                SwoopyStyle.SetActive(true);
+                JulieStyle.SetActive(false);
+                break;
+            case 2:
+                JulieStyle.SetActive(true);
+                SwoopyStyle.SetActive(false);
+                break;
+            default:
+                JulieStyle.SetActive(false);
+                SwoopyStyle.SetActive(false);
+                break;
+        }
+    }
 
     public void ChangeHairColor(int color)
     {
@@ -55,6 +80,153 @@ public class AvatarEditor : MonoBehaviour
 
         JulieStyle.GetComponent<Image>().color = colorToSet;
         SwoopyStyle.GetComponent<Image>().color = colorToSet;
+    }
+
+    public void ChangeSkinTone(int color)
+    {
+        dataToSave.skinTone = color;
+
+        Color32 colorToSet;
+
+        switch (color)
+        {
+            case 1:
+                colorToSet = new Color32(239, 198, 171, 255);
+                break;
+            case 2:
+                colorToSet = new Color32(199, 153, 123, 255);
+                break;
+            case 3:
+                colorToSet = new Color32(144, 103, 77, 255);
+                break;
+            case 4:
+                colorToSet = new Color32(77, 45, 24, 255);
+                break;
+            default:
+                colorToSet = Color.white;
+                break;
+        }
+
+        Base.GetComponent<Image>().color = colorToSet;
+        HealthyLeftArm.GetComponent<Image>().color = colorToSet;
+        HealthyRightArm.GetComponent<Image>().color = colorToSet;
+        LeftArmCast.GetComponent<Image>().color = colorToSet;
+        RightArmCast.GetComponent<Image>().color = colorToSet;
+    }
+
+    public void ChangeShirtColor(int color)
+    {
+        dataToSave.shirtColor = color;
+
+        Color32 colorToSet;
+
+        switch (color)
+        {
+            case 1:
+                colorToSet = new Color32(213, 68, 58, 255);
+                break;
+            case 2:
+                colorToSet = new Color32(62, 140, 212, 255);
+                break;
+            case 3:
+                colorToSet = new Color32(94, 170, 106, 255);
+                break;
+            case 4:
+                colorToSet = new Color32(181, 181, 181, 255);
+                break;
+            default:
+                colorToSet = Color.white;
+                break;
+        }
+
+        Shirt.GetComponent<Image>().color = colorToSet;
+    }
+
+    public void ChangePantsColor(int color)
+    {
+        dataToSave.pantsColor = color;
+
+        Color32 colorToSet;
+
+        switch (color)
+        {
+            case 1:
+                colorToSet = new Color32(213, 68, 58, 255);
+                break;
+            case 2:
+                colorToSet = new Color32(62, 140, 212, 255);
+                break;
+            case 3:
+                colorToSet = new Color32(94, 170, 106, 255);
+                break;
+            case 4:
+                colorToSet = new Color32(181, 181, 181, 255);
+                break;
+            default:
+                colorToSet = Color.white;
+                break;
+        }
+
+        Jeans.GetComponent<Image>().color = colorToSet;
+    }
+
+    public void ChangeShoeColor(int color)
+    {
+        dataToSave.shoeColor = color;
+
+        Color32 colorToSet;
+
+        switch (color)
+        {
+            case 1:
+                colorToSet = new Color32(213, 68, 58, 255);
+                break;
+            case 2:
+                colorToSet = new Color32(62, 140, 212, 255);
+                break;
+            case 3:
+                colorToSet = new Color32(94, 170, 106, 255);
+                break;
+            case 4:
+                colorToSet = new Color32(181, 181, 181, 255);
+                break;
+            default:
+                colorToSet = Color.white;
+                break;
+        }
+
+        Sneakers.GetComponent<Image>().color = colorToSet;
+    }
+
+    public void ChangeCastColor(int color)
+    {
+        dataToSave.castColor = color;
+
+        Color32 colorToSet;
+
+        switch (color)
+        {
+            case 1:
+                colorToSet = new Color32(213, 68, 58, 255);
+                break;
+            case 2:
+                colorToSet = new Color32(62, 140, 212, 255);
+                break;
+            case 3:
+                colorToSet = new Color32(94, 170, 106, 255);
+                break;
+            case 4:
+                colorToSet = new Color32(181, 181, 181, 255);
+                break;
+            default:
+                colorToSet = Color.white;
+                break;
+        }
+
+        LeftArmCastColor.GetComponent<Image>().color = colorToSet;
+        RightArmCastColor.GetComponent<Image>().color = colorToSet;
+        LeftLegCast.GetComponent<Image>().color = colorToSet;
+        RightLegCast.GetComponent<Image>().color = colorToSet;
     }
 
     public void ToggleLeftArmCast()

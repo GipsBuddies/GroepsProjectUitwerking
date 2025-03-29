@@ -4,8 +4,6 @@ public class AvatarData : MonoBehaviour
 {
     public int characterType;
     
-    [Header("Human Characters")]
-    
     public int skinTone;
     public int hairStyle;
     public int hairColor;
