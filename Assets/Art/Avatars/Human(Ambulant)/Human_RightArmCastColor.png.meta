@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: de03c4d1924971d4aafdbca5aa5c6c7d
+guid: 35c95882810d8ef41be318f347b7c023
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1936075795184229386
-    second: Human_HealthyLeftArm_Lines_0
+      213: -5883084962214054984
+    second: Human_RightArmCastColor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Human_HealthyLeftArm_Lines_0
+      name: Human_RightArmCastColor_0
       rect:
         serializedVersion: 2
-        x: 510
-        y: 341
-        width: 64
-        height: 287
+        x: 385
+        y: 461
+        width: 126
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f3efc1725da125e0800000000000000
-      internalID: -1936075795184229386
+      spriteID: 8b3f9c395651b5ea0800000000000000
+      internalID: -5883084962214054984
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Human_HealthyLeftArm_Lines_0: -1936075795184229386
+      Human_RightArmCastColor_0: -5883084962214054984
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7edbc7c11384f664aae06bcc1cec0c45
+guid: 9e9b42db3b1eec24c95e24fc8c234da4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3636201789096479407
-    second: Human_Base_Lines_0
+      213: -1741775507535046977
+    second: Human_Base(WithUpperArms_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Human_Base_Lines_0
+      name: Human_Base(WithUpperArms_0
       rect:
         serializedVersion: 2
         x: 349
         y: 100
-        width: 208
+        width: 216
         height: 698
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 155b34dfcbd998dc0800000000000000
-      internalID: -3636201789096479407
+      spriteID: fb6d5ea7768f3d7e0800000000000000
+      internalID: -1741775507535046977
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Human_Base_Lines_0: -3636201789096479407
+      Human_Base(WithUpperArms_0: -1741775507535046977
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2d0b705b7341dd54a8f2205ae0b8f7d7
+guid: 44fa6353e62dadc429880b12fe9087fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4018463978717032898
-    second: Human_HaircutSwoopy_Lines_0
+      213: -3595038587822437522
+    second: Human_HealthyLeftArm_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Human_HaircutSwoopy_Lines_0
+      name: Human_HealthyLeftArm_0
       rect:
         serializedVersion: 2
-        x: 302
-        y: 663
-        width: 236
-        height: 181
+        x: 514
+        y: 341
+        width: 60
+        height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c1b12aa2b374c730800000000000000
-      internalID: 4018463978717032898
+      spriteID: e6b8503a37bdb1ec0800000000000000
+      internalID: -3595038587822437522
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Human_HaircutSwoopy_Lines_0: 4018463978717032898
+      Human_HealthyLeftArm_0: -3595038587822437522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
