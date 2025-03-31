@@ -66,7 +66,7 @@
                     "characterLine1": "Dat weet ik eigenlijk nog niet...",
                     "characterLine2": "Sorry!",
 
-                    "characterEmotion": "embarrassed",
+                    "characterEmotion": "neutral",
                     "dialogueOptions": [
                         {
                             "text": "Ach ja...",
@@ -121,6 +121,171 @@
                     "characterLine1": "Fijn dat ik je kon helpen!",
 
                     "characterEmotion": "cheerful"
+                }
+            ]
+        },
+        {
+            "seriesName": "prephase",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Hoi!",
+                    "characterLine2": "Laten we het hebben over het voortraject.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Lastig woord, ik weet het, maar het betekent",
+                    "characterLine2": "gewoon wat er gebeurt vóórdat je gips krijgt.",
+
+
+                    "characterEmotion": "cheerful",
+                    "dialogueOptions": [
+                        {
+                            "text": "Ik heb al gips gekregen!",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "hasCastAlready"
+                        },
+                        {
+                            "text": "Ik heb nog geen gips.",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "doesNotHaveCastYet"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "hasCastAlready",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "O ja, nu zie ik het!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Het lijkt me toch handig om het te hebben",
+                    "characterLine2": "over wat er allemaal al gebeurd is.",
+                    "characterLine3": "Als jij dat wilt, ten minste.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Vind je het oké om er iets over te zeggen?",
+                    "characterLine2": "Misschien kan ik dan wat vragen beantwoorden.",
+
+                    "characterEmotion": "neutral",
+                    "dialogueOptions": [
+                        {
+                            "text": "Prima!",
+                            "iconName": "yes",
+                            "takesYouTo": "talkAboutPrephase"
+                        },
+                        {
+                            "text": "Liever niet...",
+                            "iconName": "no",
+                            "takesYouTo": "dontTalkAboutPrephase"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "dontTalkAboutPrephase",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Helemaal niet erg!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Als je het een andere keer wel wilt,",
+                    "characterLine2": "kun je gewoon langskomen.",
+
+
+                    "characterEmotion": "neutral"
+                }
+            ]
+        },
+        {
+            "seriesName": "talkAboutPrephase",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Goed!",
+                    "characterLine2": "Je kunt nog steeds altijd stoppen",
+                    "characterLine3": "door op de knop linksboven te klikken.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Dan ga ik je eerst wat vragen over",
+                    "characterLine2": "heeeeeeelemaal in het begin.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Hoe ben jij naar het ziekenhuis gebracht?",
+
+                    "characterEmotion": "neutral",
+                    "dialogueOptions": [
+                        {
+                            "text": "Met de ambulance.",
+                            "iconName": "ambulance",
+                            "takesYouTo": "tookAmbulance"
+                        },
+                        {
+                            "text": "Door mijn ouder(s).",
+                            "iconName": "person",
+                            "takesYouTo": "takenByParents"
+                        },
+                        {
+                            "text": "Op een andere manier.",
+                            "iconName": "person",
+                            "takesYouTo": "takenByParents"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "tookAmbulance",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Ik hoop dat het niet al te spannend was!",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "",
+                    "characterLine2": "heeeeeeelemaal in het begin.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Hoe ben jij naar het ziekenhuis gebracht?",
+
+                    "characterEmotion": "neutral",
+                    "dialogueOptions": [
+                        {
+                            "text": "Met de ambulance.",
+                            "iconName": "ambulance",
+                            "takesYouTo": "tookAmbulance"
+                        },
+                        {
+                            "text": "Door mijn ouder(s).",
+                            "iconName": "person",
+                            "takesYouTo": "takenByParents"
+                        },
+                        {
+                            "text": "Op een andere manier.",
+                            "iconName": "person",
+                            "takesYouTo": "takenByParents"
+                        }
+                    ]
                 }
             ]
         }

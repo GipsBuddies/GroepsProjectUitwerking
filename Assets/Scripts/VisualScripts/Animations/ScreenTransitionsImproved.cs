@@ -125,8 +125,14 @@ public class ScreenTransitionsImproved : MonoBehaviour
 
     private void SwitchPages(GameObject pageToClose, GameObject pageToOpen)
     {
-        pageToClose.SetActive(false);
-        pageToOpen.SetActive(true);
+        if(pageToClose != null)
+        {
+            pageToClose.SetActive(false);
+        }
+        if(pageToOpen != null)
+        {
+            pageToOpen.SetActive(true);
+        }
     }
 
     #endregion
