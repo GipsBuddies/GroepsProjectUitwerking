@@ -192,6 +192,66 @@
             ]
         },
         {
+            "seriesName": "doesNotHaveCastYet",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Oh... waar ben je nu dan?",
+
+                    "characterEmotion": "thinking",
+                    "dialogueOptions": [
+                        {
+                            "text": "In de wachtkamer",
+                            "iconName": "doctor",
+                            "takesYouTo": "doesNotHaveCastYet2"
+                        },
+                        {
+                            "text": "Onderweg naar het ziekenhuis",
+                            "iconName": "ambulance",
+                            "takesYouTo": "doesNotHaveCastYet2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "doesNotHaveCastYet2",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Oké, wees wel voorzichtig met je breuk",
+                    "characterLine2": "als je deze app gebruikt.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Laten we het eens hebben over wat er",
+                    "characterLine2": "allemaal al gebeurd is, of nog moet gebeuren.",
+                    "characterLine3": "Als jij dat wilt, ten minste.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Vind je het oké om er iets over te zeggen?",
+                    "characterLine2": "Misschien kan ik dan wat vragen beantwoorden.",
+
+                    "characterEmotion": "neutral",
+                    "dialogueOptions": [
+                        {
+                            "text": "Prima!",
+                            "iconName": "yes",
+                            "takesYouTo": "talkAboutPrephase"
+                        },
+                        {
+                            "text": "Liever niet...",
+                            "iconName": "no",
+                            "takesYouTo": "dontTalkAboutPrephase"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "seriesName": "dontTalkAboutPrephase",
 
             "dialogueScreens": [
@@ -232,19 +292,19 @@
                     "characterEmotion": "neutral",
                     "dialogueOptions": [
                         {
-                            "text": "Met de ambulance.",
+                            "text": "Met de ambulance",
                             "iconName": "ambulance",
                             "takesYouTo": "tookAmbulance"
                         },
                         {
-                            "text": "Door mijn ouder(s).",
+                            "text": "Door mijn ouder(s)",
                             "iconName": "person",
                             "takesYouTo": "takenByParents"
                         },
                         {
-                            "text": "Op een andere manier.",
+                            "text": "Op een andere manier",
                             "iconName": "person",
-                            "takesYouTo": "takenByParents"
+                            "takesYouTo": "differentTravel"
                         }
                     ]
                 }
@@ -260,32 +320,857 @@
                     "characterEmotion": "thinking"
                 },
                 {
-                    "characterLine1": "",
-                    "characterLine2": "heeeeeeelemaal in het begin.",
+                    "characterLine1": "Het is vaak erg druk in een ambulance,",
+                    "characterLine2": "maar het is een erg snelle manier",
+                    "characterLine3": "om hulp te krijgen.",
 
                     "characterEmotion": "neutral"
                 },
                 {
-                    "characterLine1": "Hoe ben jij naar het ziekenhuis gebracht?",
+                    "characterLine1": "En nog een voordeel is dat er dokters",
+                    "characterLine2": "bij je zijn die je alvast wat kunnen helpen!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Ik zal je steunen en uitleg geven",
+                    "characterLine2": "gedurende het hele behandeltraject.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Hier heb ik bijvoorbeeld een website met",
+                    "characterLine2": "wat dingen die je in het begin kunt verwachten.",
+                    "characterLine3": "(Je kunt op de knop klikken!)",
+
+                    "characterEmotion": "neutral",
+
+                    "externalLink": "https://www.amphia.nl/patienten-en-bezoekers/kinderen/kinderen-7-12/iets-gebroken?search_query=Folder%20kinderen%20gips",
+                    "externalLinkName": "Amphia - Iets Gebroken?"
+                },
+                {
+                    "characterLine1": "Ook heb ik deze link nog voor je,",
+                    "characterLine2": "die uitleg geeft over waarom je bot gebroken is,",
+                    "characterLine3": "en hoe het genezingsproces werkt.",
+
+                    "characterEmotion": "cheerful",
+
+                    "externalLink": "https://www.amphia.nl/folders/gipskamer-het-genezen-van-een-botbreuk?search_query=Folder%20kinderen%20gips",
+                    "externalLinkName": "Amphia - Het Genezen van een Botbreuk"
+                },
+                {
+                    "characterLine1": "Hopelijk was het een beetje leerzaam.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als eerste zal een van je ouders de benodigde",
+                    "characterLine2": "verzekering en persoonlijke gegevens doorgeven",
+                    "characterLine3": "aan de receptionist.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Als deze informatie verwerkt is gaan we naar de volgende stap.",
 
                     "characterEmotion": "neutral",
                     "dialogueOptions": [
                         {
-                            "text": "Met de ambulance.",
-                            "iconName": "ambulance",
-                            "takesYouTo": "tookAmbulance"
-                        },
-                        {
-                            "text": "Door mijn ouder(s).",
-                            "iconName": "person",
-                            "takesYouTo": "takenByParents"
-                        },
-                        {
-                            "text": "Op een andere manier.",
-                            "iconName": "person",
-                            "takesYouTo": "takenByParents"
+                            "text": "Oké!",
+                            "iconName": "yes",
+                            "takesYouTo": "prephase2"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "seriesName": "takenByParents",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Top! Altijd fijn als er mensen bij zijn die je kent",
+                    "characterLine2": "in zo’n stressvolle situatie.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Ik zal je steunen en uitleg geven",
+                    "characterLine2": "gedurende het hele behandeltraject.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Hier heb ik bijvoorbeeld een website met",
+                    "characterLine2": "wat dingen die je in het begin kunt verwachten.",
+                    "characterLine3": "(Je kunt op de knop klikken!)",
+
+                    "characterEmotion": "neutral",
+
+                    "externalLink": "https://www.amphia.nl/patienten-en-bezoekers/kinderen/kinderen-7-12/iets-gebroken?search_query=Folder%20kinderen%20gips",
+                    "externalLinkName": "Amphia - Iets Gebroken?"
+                },
+                {
+                    "characterLine1": "Ook heb ik deze link nog voor je,",
+                    "characterLine2": "die uitleg geeft over waarom je bot gebroken is,",
+                    "characterLine3": "en hoe het genezingsproces werkt.",
+
+                    "characterEmotion": "cheerful",
+
+                    "externalLink": "https://www.amphia.nl/folders/gipskamer-het-genezen-van-een-botbreuk?search_query=Folder%20kinderen%20gips",
+                    "externalLinkName": "Amphia - Het Genezen van een Botbreuk"
+                },
+                {
+                    "characterLine1": "Hopelijk was het een beetje leerzaam.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als eerste zal een van je ouders de benodigde",
+                    "characterLine2": "verzekering en persoonlijke gegevens doorgeven",
+                    "characterLine3": "aan de receptionist.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Als deze informatie verwerkt is gaan we naar de volgende stap.",
+
+                    "characterEmotion": "neutral",
+                    "dialogueOptions": [
+                        {
+                            "text": "Oké!",
+                            "iconName": "yes",
+                            "takesYouTo": "prephase2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "differentTravel",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Begrepen.",
+                    "characterLine2": "ik hoop dat het niet al te veel moeite",
+                    "characterLine3": "kostte om op de spoedeisende hulp te komen.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Ik zal je steunen en uitleg geven",
+                    "characterLine2": "gedurende het hele behandeltraject.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Hier heb ik bijvoorbeeld een website met",
+                    "characterLine2": "wat dingen die je in het begin kunt verwachten.",
+                    "characterLine3": "(Je kunt op de knop klikken!)",
+
+                    "characterEmotion": "neutral",
+
+                    "externalLink": "https://www.amphia.nl/patienten-en-bezoekers/kinderen/kinderen-7-12/iets-gebroken?search_query=Folder%20kinderen%20gips",
+                    "externalLinkName": "Amphia - Iets Gebroken?"
+                },
+                {
+                    "characterLine1": "Ook heb ik deze link nog voor je,",
+                    "characterLine2": "die uitleg geeft over waarom je bot gebroken is,",
+                    "characterLine3": "en hoe het genezingsproces werkt.",
+
+                    "characterEmotion": "cheerful",
+
+                    "externalLink": "https://www.amphia.nl/folders/gipskamer-het-genezen-van-een-botbreuk?search_query=Folder%20kinderen%20gips",
+                    "externalLinkName": "Amphia - Het Genezen van een Botbreuk"
+                },
+                {
+                    "characterLine1": "Hopelijk was het een beetje leerzaam.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als eerste zal een van je ouders de benodigde",
+                    "characterLine2": "verzekering en persoonlijke gegevens doorgeven",
+                    "characterLine3": "aan de receptionist.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Als deze informatie verwerkt is gaan we naar de volgende stap.",
+
+                    "characterEmotion": "neutral",
+                    "dialogueOptions": [
+                        {
+                            "text": "Oké!",
+                            "iconName": "yes",
+                            "takesYouTo": "prephase2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "prephase2",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "De volgende stap in het voortraject",
+                    "characterLine2": "is de eerste beoordeling.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dit betekent dat er een verpleegkundige",
+                    "characterLine2": "gaat kijken hoe ernstig de situatie is,",
+                    "characterLine3": "en of je eventuele pijnstilling nodig hebt.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Als je pijnstilling nodig blijkt te hebben,",
+                    "characterLine2": "wordt dit toegediend in de vorm van",
+                    "characterLine3": "een siroop of zetpil.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Heb jij veel last van je botbreuk?",
+
+                    "characterEmotion": "thinking",
+                    "dialogueOptions": [
+                        {
+                            "text": "Ja",
+                            "iconName": "yes",
+                            "takesYouTo": "yesPain"
+                        },
+                        {
+                            "text": "Nee",
+                            "iconName": "no",
+                            "takesYouTo": "noPain"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "yesPain",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Oh..",
+                    "characterLine2": "Dat is spijtig om te horen.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Je kan vragen om wat pijnstilling",
+                    "characterLine2": "om de pijn te verminderen.",
+
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als dat niet helpt,",
+                    "characterLine2": "vraag een verpleegkundige dan om hulp.",
+
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Nadat een verpleegkundige naar je verwonding",
+                    "characterLine2": "heeft gekeken en je mogelijk pijnstilling hebt gekregen,",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "zal een specialist je meenemen om een röntgenfoto te maken",
+                    "characterLine2": "van je bot om te kijken wat de volgende stap zal zijn",
+
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Je voelt hier helemaal niks van,",
+                    "characterLine2": "en je zal hier dan ook geen last van hebben.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als je meer informatie wilt, kun je deze website bekijken.",
+                    "characterLine2": "Ook is er een uitlegvideo te zien waar wordt verteld",
+                    "characterLine3": "wat er gaat gebeuren.",
+
+                    "characterEmotion": "neutral",
+                    "externalLink": "https://www.amphia.nl/folders/kindergeneeskunde-rontgenfoto-bij-kinderen?search_query=Kinderen",
+                    "externalLinkName": "Amphia - Röntgenfoto bij Kinderen"
+                },
+                {
+                    "characterLine1": "Ben je een beetje nerveus voor de foto?",
+
+                    "characterEmotion": "thinking",
+                    "dialogueOptions": [
+                        {
+                            "text": "Ja",
+                            "iconName": "yes",
+                            "takesYouTo": "nervousForPhoto"
+                        },
+                        {
+                            "text": "Nee",
+                            "iconName": "no",
+                            "takesYouTo": "notNervousForPhoto"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "noPain",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Dat is goed om te horen!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Als je later wel nog pijn krijgt,",
+                    "characterLine2": "is het geen probleem om alsnog om",
+                    "characterLine3": "pijnstillende medicatie te vragen!",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Nadat een verpleegkundige naar je verwonding",
+                    "characterLine2": "heeft gekeken en je mogelijk pijnstilling hebt gekregen,",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "zal een specialist je meenemen om een röntgenfoto te maken",
+                    "characterLine2": "van je bot om te kijken wat de volgende stap zal zijn",
+
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Je voelt hier helemaal niks van,",
+                    "characterLine2": "en je zal hier dan ook geen last van hebben.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als je meer informatie wilt, kun je deze website bekijken.",
+                    "characterLine2": "Ook is er een uitlegvideo te zien waar wordt verteld",
+                    "characterLine3": "wat er gaat gebeuren.",
+
+                    "characterEmotion": "neutral",
+                    "externalLink": "https://www.amphia.nl/folders/kindergeneeskunde-rontgenfoto-bij-kinderen?search_query=Kinderen",
+                    "externalLinkName": "Amphia - Röntgenfoto bij Kinderen"
+                },
+                {
+                    "characterLine1": "Ben je een beetje nerveus voor de foto?",
+
+                    "characterEmotion": "thinking",
+                    "dialogueOptions": [
+                        {
+                            "text": "Ja",
+                            "iconName": "yes",
+                            "takesYouTo": "nervousForPhoto"
+                        },
+                        {
+                            "text": "Nee",
+                            "iconName": "no",
+                            "takesYouTo": "notNervousForPhoto"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "nervousForPhoto",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Dat is helemaal niet erg.",
+                    "characterLine2": "Ik was ook heel erg nerveus toen ik mijn röntgenfoto kreeg.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Gelukkig hebben de artsen me geholpen door",
+                    "characterLine2": "het hele proces, en ze hebben me gerustgesteld.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Je mag natuurlijk net als ik ook je knuffel meenemen,",
+                    "characterLine2": "als je je daardoor veiliger voelt.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Je hebt het door het voortraject gehaald,",
+                    "characterLine2": "goed bezig!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Als je naar het hoofdtraject gaat zal je",
+                    "characterLine2": "meer informatie krijgen over wat er verder gaat gebeuren.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Vergeet niet om hiervoor de juiste route in te vullen!",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Doei!",
+
+                    "characterEmotion": "cheerful"
+                }
+            ]
+        },
+        {
+            "seriesName": "nervousForPhoto",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Dat is wel heel erg dapper van je.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Ik was persoonlijk wel heel een beetje nerveus,",
+                    "characterLine2": "maar gelukkig hebben de verpleegkundigen me goed geholpen",
+                    "characterLine3": "en gesteund door het hele proces heen.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Ook vond ik het fijn dat ik mijn knuffel mee mocht nemen,",
+                    "characterLine2": "dit mag jij natuurlijk ook doen.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Je hebt het door het voortraject gehaald,",
+                    "characterLine2": "goed bezig!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Als je naar het hoofdtraject gaat zal je",
+                    "characterLine2": "meer informatie krijgen over wat er verder gaat gebeuren.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Vergeet niet om hiervoor de juiste route in te vullen!",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Doei!",
+
+                    "characterEmotion": "cheerful"
+                }
+            ]
+        },
+        {
+            "seriesName": "mainPhaseA",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Je hebt route A gekregen, omdat de arts heeft besloten",
+                    "characterLine2": "dat er geen operatie nodig is! Dit betekent dat je",
+                    "characterLine3": "alleen een gipsbehandeling nodig zal hebben.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Hier zie je hoe een gipsbehandeling werkt voor je",
+                    "characterLine2": "armen of benen. Ook zie je al hoe je gips",
+                    "characterLine3": "verwijderd zal gaan worden.",
+
+                    "characterEmotion": "neutral",
+                    "externalLink": "https://www.youtube.com/watch?v=PgkO90HhdAA",
+                    "externalLinkName": "Het Klokhuis - Hoe wordt Gips om een Gebroken Arm of Been gedaan?"
+                },
+                {
+                    "characterLine1": "Een arts of verpleegkundige zal je meenemen",
+                    "characterLine2": "om je gebroken bot in het gips te stabiliseren.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dit zorgt ervoor dat het niet verder beschadigd kan worden,",
+                    "characterLine2": "en dat het bot op de juiste plek blijft zitten,",
+                    "characterLine3": "waardoor de botbreuk op een goede manier kan genezen.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "En wil je een leuk feitje weten?",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Je mag zelf kiezen welke kleur gips je wilt!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Je zal ook nog wat uitleg krijgen van de arts of",
+                    "characterLine2": "verpleegkundige over wat je wel of niet kan met het gips.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dit is ook een goed moment om vragen",
+                    "characterLine2": "te stellen over onduidelijkheden.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dit was het alweer voor de gipsbehandeling!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Wel zul je nog uitleg krijgen van de arts",
+                    "characterLine2": "of verpleegkundige over hoe je moet zorgen",
+                    "characterLine3": "voor het gips, en wat je wel of niet kan.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Ook krijg je te horen wat je moet",
+                    "characterLine2": "doen als er problemen zijn.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als er nog iets onduidelijk is,",
+                    "characterLine2": "kun je bij deze link nog wat uitleg",
+                    "characterLine3": "krijgen over het gipsproces.",
+
+                    "characterEmotion": "neutral",
+                    "externalLink": "https://www.amphia.nl/folders/gipskamer-kinderen-info-met-het-klokhuis-op-de-gipskamer?search_query=Kinderen ",
+                    "externalLinkName": "Amphia - Het Klokhuis op de Gipskamer"
+                },
+                {
+                    "characterLine1": "Als laatste komen er nog een aantal vervolgafspraken",
+                    "characterLine2": "waar wordt gekeken of de breuk goed geneest.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Vergeet niet om deze afspraken",
+                    "characterLine2": "in de kalenderfunctie te zetten.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Dat was het dan alweer voor het hoofdtraject!",
+                    "characterLine2": "Je bent echt super goed bezig!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Je kan bij het natraject kijken",
+                    "characterLine2": "voor het laatste gedeelte van je behandeling.",
+                    "characterLine3": "Veel succes!",
+
+                    "characterEmotion": "cheerful"
+                }
+            ]
+        },
+        {
+            "seriesName": "mainPhaseB",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Je hebt route B gekregen,",
+                    "characterLine2": "dit betekent dat de artsen denken",
+                    "characterLine3": "dat je een operatie nodig gaat hebben.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Ik zal je uitleggen hoe dat allemaal werkt.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Het kan zijn dat de breuk moeilijker",
+                    "characterLine2": "te genezen is dan de artsen eerst dachten.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dit betekent dat er een kans is dat er",
+                    "characterLine2": "een orthopeed naar je botbreuk moet kijken.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Nadat de specialist naar je breuk heeft gekeken,",
+                    "characterLine2": "zal er een besluit worden gemaakt of",
+                    "characterLine3": "je echt een operatie nodig hebt.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als dit niet het geval is, ga je verder met route A.",
+                    "characterLine2": "Is dit wel het geval, dan ga je verder met route B.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Voordat de artsen iets kunnen doen voor de operatie,",
+                    "characterLine2": "hebben ze eerst toestemming nodig van je ouders.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Of, als je 12 jaar of ouder bent,",
+                    "characterLine2": "van jou EN je ouders.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Het is sowieso een goed idee om het er",
+                    "characterLine2": "met je ouders over te hebben,",
+                    "characterLine3": "of je nou 12 of ouder bent of niet.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Als er toestemming is gegeven, gaan de artsen",
+                    "characterLine2": "je klaar maken voor de operatie met",
+                    "characterLine3": "een operatiehemd, en mogelijk een IV-lijn.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Hierna komt een anesthesist vertellen over",
+                    "characterLine2": "wat er gaat gebeuren, en zorgen zij ervoor",
+                    "characterLine3": "dat je onder narcose wordt gebracht.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Nadat je onder narcose bent gebracht,",
+                    "characterLine2": "zal de orthopeed de operatie uitvoeren.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Nadat de operatie goed is afgelopen,",
+                    "characterLine2": "zal je weer wakker worden, en naar",
+                    "characterLine3": "de herstelkamer gebracht worden.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Daar kun je weer bijkomen van de narcose.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Als je na de narcose pijn hebt,",
+                    "characterLine2": "kun je vragen aan de verpleegkundige",
+                    "characterLine3": "om je pijnstilling te geven.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Ook zal het zorg personeel er alles aan doen",
+                    "characterLine2": "om ervoor te zorgen dat je",
+                    "characterLine3": "je comfortabel voelt.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Als je bij bent gekomen, zullen ze",
+                    "characterLine2": "het daadwerkelijke gips gaan toedienen",
+                    "characterLine3": "op de plek waar het nodig is.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Hier is nog een video die uitlegt hoe je het gips",
+                    "characterLine2": "gaat krijgen, en er wordt al besproken hoe het",
+                    "characterLine3": "weer verwijderd zal worden als je breuk genezen is.",
+
+                    "characterEmotion": "cheerful",
+                    "externalLink": "https://www.youtube.com/watch?v=PgkO90HhdAA",
+                    "externalLinkName": "Het Klokhuis - Hoe wordt Gips om een Gebroken Arm of Been gedaan?"
+                },
+                {
+                    "characterLine1": "Hierna krijg je uitleg over hoe je voor je gips",
+                    "characterLine2": "moet zorgen, en als je een spalk hebt,",
+                    "characterLine3": "hoe je voor je spalk moet zorgen.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dit was het voor het hoofdtraject!",
+                    "characterLine2": "Heel erg dapper van je dat je door",
+                    "characterLine3": "deze operatie heen bent gegaan!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Kijk voor uitleg over het laatste gedeelte",
+                    "characterLine2": "bij het natraject. Ook kan je hier nog",
+                    "characterLine3": "tips vinden over het omgaan met je gips.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Veel succes!",
+
+                    "characterEmotion": "cheerful"
+                }
+            ]
+        },
+        {
+            "seriesName": "postphase",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Dit is het natraject.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Echt heel top dat je zo dapper",
+                    "characterLine2": "bent geweest door het hele proces!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Eindelijk mag je naar huis,",
+                    "characterLine2": "na al die tests en andere dingen",
+                    "characterLine3": "bij de spoedeisende hulp.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Wel zijn er een aantal dingen",
+                    "characterLine2": "waar je rekening mee moet houden.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Op deze pagina die je al eerder hebt gezien,",
+                    "characterLine2": "kan je nog een keer kijken hoe je breuk geneest,",
+                    "characterLine3": "en wat je moet voorkomen.",
+
+                    "characterEmotion": "neutral",
+                    "externalLink": "https://www.amphia.nl/folders/gipskamer-het-genezen-van-een-botbreuk?search_query=Folder%20kinderen%20gips",
+                    "externalLinkName": "Amphia - Het Genezen van een Botbreuk"
+                },
+                {
+                    "characterLine1": "Op een controle afspraak zal er worden gekeken",
+                    "characterLine2": "of het gips verwijderd kan worden.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als dit het geval is, zal de arts of verpleegkundige",
+                    "characterLine2": "uitleg wat er gaat gebeuren tijdens het verwijderen.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Natuurlijk mag je ook je knuffel weer",
+                    "characterLine2": "meenemen voor het verwijderen.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Dat zal ik ook nog uitleggen.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Het daadwerkelijke verwijderen kan gebeuren",
+                    "characterLine2": "met een schaar, of een speciale zaag die",
+                    "characterLine3": "veilig is voor je huid.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Je kan hier meer informatie",
+                    "characterLine2": "over vinden op deze website.",
+
+                    "characterEmotion": "neutral",
+                    "externalLink": "https://www.amphia.nl/folders/gipskamer-kinderen-info-met-het-klokhuis-op-de-gipskamer?search_query=Kinderen",
+                    "externalLinkName": "Amphia - Het Klokhuis op de Gipskamer"
+                },
+                {
+                    "characterLine1": "Nadat het gips verwijderd is, komt een arts",
+                    "characterLine2": "kijken of je breuk goed genezen is.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Er kan mogelijk nog een röntgenfoto",
+                    "characterLine2": "gemaakt worden om dit na te gaan.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Nadat de arts naar je breuk heeft gekeken,",
+                    "characterLine2": "en vindt dat het goed genezen is,",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "zal je worden verteld wat je kan doen om",
+                    "characterLine2": "je genezen breuk te versterken,",
+                    "characterLine3": "en wat je al wel en nog even niet kan.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Ook is er een mogelijkheid dat je een",
+                    "characterLine2": "vervolgtraject krijgt, in de vorm van fysiotherapie.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Dit is om te helpen met het versterken en weer goed",
+                    "characterLine2": "kunnen gebruiken van je nu genezen lichaamsdeel.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Hierover kan je op deze webpagina meer vinden.",
+
+                    "characterEmotion": "neutral",
+                    "externalLink": "https://fysiofitaal.nl/fysiotherapie/na-operatie/fysiotherapie-na-een-botbreuk-of-trauma/ ",
+                    "externalLinkName": "Fysio Fitaal - Fysiotherapie na een botbreuk of trauma"
+                },
+                {
+                    "characterLine1": "Dat was het dan!",
+                    "characterLine2": "je hebt het hele proces doorlopen!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Ik ben trots op je!",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Ik wens je veel geluk!",
+
+                    "characterEmotion": "neutral"
                 }
             ]
         }
