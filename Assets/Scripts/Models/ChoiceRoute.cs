@@ -3,7 +3,6 @@ using System;
 [Serializable]
 public class ChoiceRoute
 {
-    public string Id;
     public string UserId;
     public bool Path;
     public bool Begining;
@@ -12,4 +11,16 @@ public class ChoiceRoute
     public string NamePatient;
     public DateTime BirthDate;
     public string NameDoctor;
+    public int CharacterType;
+    public int CastColor;
+    public bool HasCastOnLeftArm;
+    public bool HasCastOnRightArm;
+    public bool HasCastOnLeftLeg;
+    public bool HasCastOnRightLeg;
+    public int SkinTone;
+    public int HairStyle;
+    public int HairColor;
+    public int ShirtColor;
+    public int PantsColor;
+    public int ShoeColor;
 }

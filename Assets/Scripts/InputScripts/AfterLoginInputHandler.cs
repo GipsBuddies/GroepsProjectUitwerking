@@ -49,7 +49,7 @@ public class AfterLoginInputHandler : MonoBehaviour
 
         ChoiceRoute choiceRoute = new ChoiceRoute();
 
-        choiceRoute.Id = apiConnector.currentChoiceRoute.Id;
+        //choiceRoute.Id = apiConnector.currentChoiceRoute.Id;
         choiceRoute.UserId = apiConnector.currentChoiceRoute.UserId;
 
         choiceRoute.Path = apiConnector.currentChoiceRoute.Path;
