@@ -1,6 +1,9 @@
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using NUnit.Framework;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 // This class contains methods used to navigate through the unity program.
 // All methods in the framework are named using the following convention: "GoTo(screen)".
@@ -15,6 +18,9 @@ public class ScreenHandler : MonoBehaviour
     public GameObject homeScreenRouteA;
     public GameObject homeScreenRouteB;
     public GameObject menubar;
+
+    public GameObject progressScreenA;
+    public GameObject progressScreenB;
 
     public GameObject diaryScreen;
     public GameObject writeDiaryScreen;
@@ -36,8 +42,25 @@ public class ScreenHandler : MonoBehaviour
     public GameObject accountScreen;
     public GameObject appointmentScreen;
 
+    public GameObject buttonA;
+    public GameObject buttonB;
+
+    public TextMeshProUGUI prephaseTextA;
+    public TextMeshProUGUI mainphaseTextA;
+    public TextMeshProUGUI postphaseTextA;
+
+    public TextMeshProUGUI prephaseTextB;
+    public TextMeshProUGUI mainphaseTextB;
+    public TextMeshProUGUI postphaseTextB;
+
     public bool loggedIn;
     public bool followsRouteB;
+
+    public bool isPrephaseCompleted;
+    public bool isMainphaseCompleted;
+    public bool isPostphaseCompleted;
+
+    private bool onRouteB = false;
 
     void Start()
     {
@@ -51,6 +74,9 @@ public class ScreenHandler : MonoBehaviour
         homeScreenRouteA.SetActive(false);
         homeScreenRouteB.SetActive(false);
         menubar.SetActive(false);
+
+        progressScreenA.SetActive(false);
+        progressScreenB.SetActive(false);
 
         diaryScreen.SetActive(false);
         writeDiaryScreen.SetActive(false);
@@ -85,7 +111,48 @@ public class ScreenHandler : MonoBehaviour
     {
         if (loggedIn)
         {
+            buttonA.SetActive(false);
+            buttonB.SetActive(false);
             await apiConnector.ReadChoiceRoute();
+
+            if (apiConnector.currentChoiceRoute.Begining)
+            {
+                isPrephaseCompleted = true;
+                prephaseTextA.text = "VOLTOOID!";
+                prephaseTextB.text = "VOLTOOID!";
+            }
+            else
+            {
+                isPrephaseCompleted = false;
+                prephaseTextA.text = "Nog te doen";
+                prephaseTextB.text = "Nog te doen";
+            }
+
+            if (apiConnector.currentChoiceRoute.Middel)
+            {
+                isMainphaseCompleted = true;
+                mainphaseTextA.text = "VOLTOOID!";
+                mainphaseTextB.text = "VOLTOOID!";
+            }
+            else
+            {
+                isMainphaseCompleted = false;
+                mainphaseTextA.text = "Nog te doen";
+                mainphaseTextB.text = "Nog te doen";
+            }
+
+            if (apiConnector.currentChoiceRoute.Finish)
+            {
+                isPostphaseCompleted = true;
+                postphaseTextA.text = "VOLTOOID!";
+                postphaseTextB.text = "VOLTOOID!";
+            }
+            else
+            {
+                isPostphaseCompleted = false;
+                postphaseTextA.text = "Nog te doen";
+                postphaseTextB.text = "Nog te doen";
+            }
 
             if (apiConnector.currentChoiceRoute.Path)
             {
@@ -98,9 +165,29 @@ public class ScreenHandler : MonoBehaviour
         }
         else
         {
+            buttonA.SetActive(true);
+            buttonB.SetActive(true);
             ResetScreens();
             menubar.SetActive(true);
             homeScreenRouteA.SetActive(true);
+        }
+    }
+
+    public void GoToOtherTrajectHomescreenWithoutLogin()
+    {
+        if (!onRouteB)
+        {
+            ResetScreens();
+            menubar.SetActive(true);
+            homeScreenRouteB.SetActive(true);
+            onRouteB = !onRouteB;
+        }
+        else if (onRouteB)
+        {
+            ResetScreens();
+            menubar.SetActive(true);
+            homeScreenRouteA.SetActive(true);
+            onRouteB = !onRouteB;
         }
     }
 
@@ -109,6 +196,7 @@ public class ScreenHandler : MonoBehaviour
         ResetScreens();
         menubar.SetActive(true);
         homeScreenRouteA.SetActive(true);
+        progressScreenA.SetActive(true);
     }
 
     public void ApiGoToHomeScreenB()
@@ -116,6 +204,7 @@ public class ScreenHandler : MonoBehaviour
         ResetScreens();
         menubar.SetActive(true);
         homeScreenRouteB.SetActive(true);
+        progressScreenB.SetActive(true);
     }
 
     #endregion

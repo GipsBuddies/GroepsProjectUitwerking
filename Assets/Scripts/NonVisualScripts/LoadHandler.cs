@@ -16,6 +16,10 @@ public class LoadHandler : MonoBehaviour
     //for loadafterloginhandler
     public TMP_Text loadAfterLoginHandlerDateLastAppointmenttext;
 
+    //for prephase/mainphase/postphase selectionscreen
+    public TMP_Text nextappointmentselectionscreentextA;
+    public TMP_Text nextappointmentselectionscreentextB;
+
     private List<DateTime> datesOnCalendar = new List<DateTime>();
     private bool IsNewestAppointmentToday;
     private bool IsAppointmentWithinMonth;
@@ -235,6 +239,8 @@ public class LoadHandler : MonoBehaviour
                             TimeSpan differenceInTime = appointment.Date - DateTime.Now;
                             dateNextAppointment.text = $"Uw volgende afspraak is over {differenceInTime.Days} dagen en {differenceInTime.Hours} uur.";
                             loadAfterLoginHandlerDateLastAppointmenttext.text = $"{differenceInTime.Days}d, {differenceInTime.Hours}u";
+                            nextappointmentselectionscreentextA.text = $" LET OP: Uw volgende afspraak is over {differenceInTime.Days} dagen en {differenceInTime.Hours} uur.";
+                            nextappointmentselectionscreentextB.text = $" LET OP: Uw volgende afspraak is over {differenceInTime.Days} dagen en {differenceInTime.Hours} uur.";
                         }
                     }
 
