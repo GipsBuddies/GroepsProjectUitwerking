@@ -8,6 +8,7 @@ public class AfterLoginInputHandler : MonoBehaviour
 {
     public ApiConnector apiConnector;
     public LoadAfterLoginHandler loadAfterLoginHandler;
+    public AvatarData avatarData;
 
     //naam veranderen
     [SerializeField] TMP_InputField inputText;
@@ -59,6 +60,19 @@ public class AfterLoginInputHandler : MonoBehaviour
         choiceRoute.NamePatient = apiConnector.currentChoiceRoute.NamePatient;
         choiceRoute.BirthDate = apiConnector.currentChoiceRoute.BirthDate;
         choiceRoute.NameDoctor = apiConnector.currentChoiceRoute.NameDoctor;
+
+        //avatardata:
+        choiceRoute.CharacterType = avatarData.characterType;
+        choiceRoute.SkinTone = avatarData.skinTone;
+        choiceRoute.HairStyle = avatarData.hairStyle;
+        choiceRoute.ShirtColor = avatarData.shirtColor;
+        choiceRoute.PantsColor = avatarData.pantsColor;
+        choiceRoute.ShoeColor = avatarData.shoeColor;
+        choiceRoute.CastColor = avatarData.castColor;
+        choiceRoute.HasCastOnLeftArm = avatarData.hasCastOnLeftArm;
+        choiceRoute.HasCastOnRightArm = avatarData.hasCastOnRightArm;
+        choiceRoute.HasCastOnLeftLeg = avatarData.hasCastOnLeftLeg;
+        choiceRoute.HasCastOnRightLeg = avatarData.hasCastOnRightLeg;
 
         switch (option)
         {

@@ -12,6 +12,8 @@ public class ApiConnector : MonoBehaviour
     public LoadAfterLoginHandler loadAfterLoginHandler;
     public bool isRouteB = false;
 
+    public AvatarData avatarData;
+
     public List<Appointment> appointments = new List<Appointment>();
 
     [Header("Dependencies")]
@@ -90,6 +92,24 @@ public class ApiConnector : MonoBehaviour
                 Debug.Log("Logout succes");
                 screenHandler.GoToStartScreen();
                 screenHandler.loggedIn = false;
+
+
+
+                avatarData.characterType = 1;
+                avatarData.skinTone = 1;
+                avatarData.hairStyle = 2;
+                avatarData.hairColor = 2;
+                avatarData.shirtColor = 4;
+                avatarData.pantsColor = 3;
+                avatarData.shoeColor = 1;
+                avatarData.castColor = 3;
+                avatarData.hasCastOnLeftArm = true;
+                avatarData.hasCastOnRightArm = false;
+                avatarData.hasCastOnLeftLeg = false;
+                avatarData.hasCastOnRightLeg = true;
+
+
+
                 break;
             case WebRequestError errorResponse:
                 Debug.Log($"Error: {errorResponse}");

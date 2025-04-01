@@ -7,6 +7,7 @@ public class LoadAfterLoginHandler : MonoBehaviour
     public ApiConnector apiConnector;
     public LoadHandler loadHandler;
     public ScreenHandler screenHandler;
+    public AvatarData avatarData;
 
     public TMP_Text usernameText;
     public TMP_Text birthdateText;
@@ -19,6 +20,19 @@ public class LoadAfterLoginHandler : MonoBehaviour
         DateTime standardDatetime = new DateTime(1900, 1, 1);
 
         await apiConnector.ReadChoiceRoute();
+
+        avatarData.characterType = apiConnector.currentChoiceRoute.CharacterType;
+        avatarData.skinTone = apiConnector.currentChoiceRoute.SkinTone;
+        avatarData.hairStyle = apiConnector.currentChoiceRoute.HairStyle;
+        avatarData.hairColor = apiConnector.currentChoiceRoute.HairColor;
+        avatarData.shirtColor = apiConnector.currentChoiceRoute.ShirtColor;
+        avatarData.pantsColor = apiConnector.currentChoiceRoute.PantsColor;
+        avatarData.shoeColor = apiConnector.currentChoiceRoute.ShoeColor;
+        avatarData.castColor = apiConnector.currentChoiceRoute.CastColor;
+        avatarData.hasCastOnLeftArm = apiConnector.currentChoiceRoute.HasCastOnLeftArm;
+        avatarData.hasCastOnRightArm = apiConnector.currentChoiceRoute.HasCastOnRightArm;
+        avatarData.hasCastOnLeftLeg = apiConnector.currentChoiceRoute.HasCastOnLeftLeg;
+        avatarData.hasCastOnRightLeg = apiConnector.currentChoiceRoute.HasCastOnRightLeg;
 
         if (apiConnector.currentChoiceRoute.NamePatient == "")
         {
