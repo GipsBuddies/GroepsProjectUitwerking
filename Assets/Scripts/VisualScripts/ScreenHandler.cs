@@ -98,6 +98,7 @@ public class ScreenHandler : MonoBehaviour
         registerScreen.SetActive(false);
         accountScreen.SetActive(false);
         appointmentScreen.SetActive(false);
+        avatarEditorScreen.SetActive(false);
     }
 
     #region MainScenes

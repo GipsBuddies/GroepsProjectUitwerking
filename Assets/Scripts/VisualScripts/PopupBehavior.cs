@@ -42,7 +42,7 @@ public class PopupBehavior : MonoBehaviour
 
     private void SetRandomReminder()
     {
-        string[] reminders = { "Vergeet niet genoeg te drinken!", "Vergeet niet genoeg te eten!", "Wees voorzichtig met je gebroken ledemaat!", "Probeer 's nachts genoeg te slapen!" };
+        string[] reminders = { "Vergeet niet genoeg te drinken!", "Vergeet niet genoeg te eten!", "Wees voorzichtig met je gebroken ledemaat!", "Vergeet niet je medicijnen in te nemen als je die hebt!", "Probeer 's nachts genoeg te slapen!" };
 
         _randomReminder = reminders[Random.Range(0, reminders.Length)];
     }
