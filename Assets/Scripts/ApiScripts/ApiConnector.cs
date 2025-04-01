@@ -230,9 +230,21 @@ public async Task ReadChoiceRoute()
                     Begining = false,
                     Middel = false,
                     Finish = false,
-                    NamePatient = "",
-                    BirthDate = new DateTime(1900, 1, 1),
-                    NameDoctor = ""
+                    NamePatient = "Test",
+                    BirthDate = new DateTime(2018, 1, 1),
+                    NameDoctor = "Test",
+                    CharacterType = 1,
+                    CastColor = 3,
+                    HasCastOnLeftArm = true,
+                    HasCastOnRightArm = false,
+                    HasCastOnLeftLeg = false,
+                    HasCastOnRightLeg = true,
+                    SkinTone = 1,
+                    HairStyle = 2,
+                    HairColor = 2,
+                    ShirtColor = 4,
+                    PantsColor = 3,
+                    ShoeColor = 1
                 };
 
                 await CreateChoiceRoute(newChoiceRoute);
