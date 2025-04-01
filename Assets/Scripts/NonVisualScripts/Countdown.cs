@@ -3,30 +3,24 @@ using System.Collections;
 
 public class Countdown : MonoBehaviour
 {
-    public int duration = 60;
-    public int timeRemaining;
-    public bool isCountingDown = false;
+    public float targetTime = 60.0f;
+    public PopupBehavior Popup;
+    public bool TimerHasEnded = false;
 
-    public void Begin()
+    private void Update()
     {
-        if (!isCountingDown)
+        if (targetTime <= 0.0f)
         {
-            isCountingDown = true;
-            timeRemaining = duration;
-            Invoke("_tick", 1f);
-        }
-    }
-
-    private void _tick()
-    {
-        timeRemaining--;
-        if (timeRemaining > 0)
-        {
-            Invoke("_tick", 1f);
+            if(!TimerHasEnded)
+            {
+                Popup.PopupAppear();
+            }
+            TimerHasEnded = true;
         }
         else
         {
-            isCountingDown = false;
+            targetTime -= Time.deltaTime;
         }
+
     }
 }
