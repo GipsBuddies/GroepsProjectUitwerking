@@ -13544,7 +13544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c86bd7546f1f94e9c106ea19a09157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseUrl: https://localhost:7222
+  baseUrl: avansict2237084.azurewebsites.net
 --- !u!4 &368313433
 Transform:
   m_ObjectHideFlags: 0
@@ -35765,7 +35765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1088373366
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41860,7 +41860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1303593813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57712,10 +57712,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Julie
       objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -65
+      objectReference: {fileID: 0}
     - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 28960b4d8f36aac4bb0ebaabfb30a21c, type: 3}
+      objectReference: {fileID: 21300000, guid: c7f0b928b72b663479e61d9ffb8a2f99, type: 3}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.78823537
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.11764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5412042896879853436, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -59114,10 +59154,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: Swoopy
       objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 997129521822755024, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 28960b4d8f36aac4bb0ebaabfb30a21c, type: 3}
+      objectReference: {fileID: 21300000, guid: eb42e441bb90b664181bf9b46a29ebfc, type: 3}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.78823537
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.11764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637380459245659830, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5412042896879853436, guid: 3dcb7bd70da174f489f3fdb764d5806d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
