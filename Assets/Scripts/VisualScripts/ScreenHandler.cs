@@ -41,7 +41,6 @@ public class ScreenHandler : MonoBehaviour
     public GameObject registerScreen;
     public GameObject accountScreen;
     public GameObject appointmentScreen;
-    public GameObject avatarEditorScreen;
 
     public GameObject buttonA;
     public GameObject buttonB;
@@ -378,20 +377,6 @@ public class ScreenHandler : MonoBehaviour
         ResetScreens();
         menubar.SetActive(true);
         appointmentScreen.SetActive(true);
-    }
-
-    public void GoToAvatarEditorScreen()
-    {
-        if (loggedIn)
-        {
-            ResetScreens();
-            avatarEditorScreen.SetActive(true);
-        }
-        else
-        {
-            GoToLoginScreen();
-        }
-
     }
 
     #endregion
