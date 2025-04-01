@@ -11,21 +11,540 @@
                     "characterEmotion": "neutral",
                     "dialogueOptions": [
                         {
-                            "text": "Hoe werkt de tekenfunctie?",
-                            "iconName": "brush",
-                            "takesYouTo": "explainDrawing"
-                        },
-                        {
-                            "text": "Waar kan ik mijn traject zien?",
+                            "text": "Ik wil iets weten over gips",
                             "iconName": "personWithCast",
-                            "takesYouTo": "explainTrajectory"
+                            "takesYouTo": "castQuestion"
                         },
                         {
-                            "text": "Hoe genezen botten eigenlijk?",
+                            "text": "Ik heb ergens last van",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "currentProblem"
+                        },
+                        {
+                            "text": "Wat kan ik hier allemaal doen?",
                             "iconName": "questionMark",
-                            "takesYouTo": "explainHealing"
+                            "takesYouTo": "appQuestion"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "seriesName": "castQuestion",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Bij deze link kan je wat hulpmiddelen",
+                    "characterLine2": "vinden om de tijd met het gips",
+                    "characterLine3": "iets makkelijker te maken.",
+
+                    "characterEmotion": "neutral",
+                    "externalLink": "https://www.amphia.nl/folders/gipskamer-verkrijgen-van-medische-hulpmiddelen?search_query=Folder%20kinderen%20gips",
+                    "externalLinkName": "Amphia - Gips en Medische Hulpmiddelen"
+                },
+                {
+                    "characterLine1": "Maar als je wilt, kun je natuurlijk",
+                    "characterLine2": "ook nog wat specifiekers vragen.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Wat voor iets wil je weten?",
+
+                    "characterEmotion": "neutral",
+                    "dialogueOptions": [
+                        {
+                            "text": "Tips voor op school?",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "explainSchool"
+                        },
+                        {
+                            "text": "Zijn er oefeningen die ik kan doen?",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "explainExercise"
+                        },
+                        {
+                            "text": "kan ik sporten met gips?",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "explainSports"
+                        },
+                        {
+                            "text": "Waar moet ik op letten?",
+                            "iconName": "questionMark",
+                            "takesYouTo": "importantInfo"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "explainSchool",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Als je terug naar school gaat,",
+                    "characterLine2": "kan het af en toe moeilijk zijn",
+                    "characterLine3": "om rond te lopen met gips.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Vraag daarom wat je juffrouw of",
+                    "characterLine2": "meester kan doen om je hiermee te helpen.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als je moeite hebt met schrijven op school,",
+                    "characterLine2": "kan je altijd vragen of een van je vriendjes",
+                    "characterLine3": "of vriendinnetjes dingen voor je kan opschrijven.",
+
+                    "characterEmotion": "cheerful"
+                }
+            ]
+        },
+        {
+            "seriesName": "explainExercise",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Oké, hier is iets dat ik je aanraad.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Doe deze oefeningen 4 tot 6 keer per dag,",
+                    "characterLine2": "en voer ze dan 10 keer uit.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Zorg er wel voor dat als de oefeningen pijn doen,",
+                    "characterLine2": "dat je dan wat rustiger aan doet.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Deze oefeningen zorgen ervoor dat je gewrichten",
+                    "characterLine2": "soepel blijven, en dat je bloed goed naar",
+                    "characterLine3": "je lichaamsdeel gaat waar het gips omheen zit.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Ehh.. waar wil je specifiek tips voor krijgen?",
+
+                    "characterEmotion": "thinking",
+                    "dialogueOptions": [
+                        {
+                            "text": "Arm in het gips",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "armExercises"
+                        },
+                        {
+                            "text": "Been in het gips",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "legExercises"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "armExercises",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Als alleen je onderarm in het gips zit,",
+                    "characterLine2": "kan je als oefening rustig je elleboog",
+                    "characterLine3": "buigen en strekken.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als je vingers niet in het gips zitten,",
+                    "characterLine2": "kun je je vingers strekken en weer rustig",
+                    "characterLine3": "een vuist maken.",
+
+                    "characterEmotion": "neutral"
+                }
+            ]
+        },
+        {
+            "seriesName": "legExercises",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Als alleen je onderbeen in het gips zit,",
+                    "characterLine2": "kan je proberen om knie rustig te buigen",
+                    "characterLine3": "en vervolgens weer rustig te strekken.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Deze oefening kan je staand of zittend doen:",
+                    "characterLine2": "Probeer je been gestrekt op te tillen,",
+                    "characterLine3": "en weer rustig gestrekt te laten zakken.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als je tenen niet in het gips zitten,",
+                    "characterLine2": "kun je je tenen rustig buigen en strekken.",
+
+                    "characterEmotion": "neutral"
+                }
+            ]
+        },
+        {
+            "seriesName": "explainSports",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Het is het beste om niet veel te bewegen,",
+                    "characterLine2": "dus het wordt afgeraden om te gaan sporten.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "maar als je heel graag wil sporten,",
+                    "characterLine2": "is dat geen probleem.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Wees wel voorzichtig met je lichaamsdeel",
+                    "characterLine2": "in het gips,",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "...en vraag aan je coach of docent hoe je het",
+                    "characterLine2": "beste op een rustige manier mee kan doen.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Bespreek dit wel altijd eerst",
+                    "characterLine2": "met een dokter of arts.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Hier is nog een link met informatie",
+                    "characterLine2": "over zwemmen met gips:",
+
+                    "characterEmotion": "neutral",
+                    "externalLink": "https://www.amphia.nl/folders/gipskamer-gips-om-te-zwemmen?search_query=Folder%20kinderen%20gips",
+                    "externalLinkName": "Amphia - Gips om te Zwemmen"
+                }
+            ]
+        },
+        {
+            "seriesName": "importantInfo",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Probeer ervoor te zorgen dat je gips",
+                    "characterLine2": "niet nat wordt. Dit kan voor problemen",
+                    "characterLine3": "zorgen bij het genezen.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Vraag daarom aan een van je ouders of ze",
+                    "characterLine2": "bij de dokter een hoes kunnen halen die ervoor",
+                    "characterLine3": "zorgt dat je gips droog blijft bij het douchen.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als je been in het gips zit is het belangrijk",
+                    "characterLine2": "dat je je been hooghoudt als je zit of ligt.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dus probeer je been ergens op de bank",
+                    "characterLine2": "te leggen, of op een stoel.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Voor nog meer informatie over het gipsverband,",
+                    "characterLine2": "kun je kijken op deze link.",
+
+                    "characterEmotion": "neutral",
+                    "externalLink": "https://www.amphia.nl/folders/gipskamer-aandachtspunten-gips-kunststofverband?search_query=Folder%20kinderen%20gips",
+                    "externalLinkName": "Amphia - Aandachtspunten Gips of Kunststofverband"
+                }
+            ]
+        },
+        {
+            "seriesName": "currentProblem",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "O jee,",
+                    "characterLine2": "Wat is er aan de hand?",
+
+                    "characterEmotion": "thinking",
+                    "dialogueOptions": [
+                        {
+                            "text": "Mijn vingers zijn dik of verkleurd",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "swollenFingers"
+                        },
+                        {
+                            "text": "Mijn breuk doet zeer",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "limbHurts"
+                        },
+                        {
+                            "text": "Last na een operatie",
+                            "iconName": "questionMark",
+                            "takesYouTo": "postOperation"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "swollenFingers",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Als je vingers wat dikker worden",
+                    "characterLine2": "en een andere kleur krijgen,",
+                    "characterLine3": "is dit geen probleem.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Probeer rustig je hand hoger",
+                    "characterLine2": "te houden dan je arm, en beweeg",
+                    "characterLine3": "rustig met je vingers om dit tegen te gaan.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Je zou één van de oefeningen uit kunnen voeren.",
+                    "characterLine2": "Ook kan je vragen of je een mitella of sling",
+                    "characterLine3": "mag om je arm hoger te houden om dit te voorkomen.",
+
+                    "characterEmotion": "neutral"
+                }
+            ]
+        },
+        {
+            "seriesName": "limbHurts",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Vervelend om te horen...",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Als je pijn hebt, kan je aan een ouder",
+                    "characterLine2": "vragen of je een paracetamol mag",
+                    "characterLine3": "om de pijn te verminderen.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Zorg wel dat je niet te veel neemt op een dag,",
+                    "characterLine2": "en dat je nog even vraagt bij je dokter of dit",
+                    "characterLine3": "oké is.",
+
+                    "characterEmotion": "cheerful"
+                }
+            ]
+        },
+        {
+            "seriesName": "postOperation",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Je kan de dag na je operatie last krijgen",
+                    "characterLine2": "van spierpijn, keelpijn, vermoeidheid,",
+                    "characterLine3": "hoofdpijn of duizeligheid.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Ook kan je natuurlijk pijn hebben",
+                    "characterLine2": "op de plaats van de botbreuk.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Dit is normaal, en zal snel weggaan.",
+                    "characterLine2": "Je kan om dit te verminderen vragen",
+                    "characterLine3": "of je pijnstilling mag van je ouders.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Bespreek dit wel eerst met",
+                    "characterLine2": "een arts of dokter.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als het toch langer blijft, is het",
+                    "characterLine2": "verstandig om toch contact",
+                    "characterLine3": "op te nemen met je arts of dokter.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Als je net wakker wordt van de anesthesie,",
+                    "characterLine2": "kan je wat onrustig zijn.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Je voelt misschien je emoties meer,",
+                    "characterLine2": "en je bent wat prikkelbaarder.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dit is heel normaal,",
+                    "characterLine2": "en zal niet lang duren.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Je kan ook een aantal dagen na",
+                    "characterLine2": "je operatie last krijgen van stijfheid",
+                    "characterLine3": "in je gewrichten, of mentale problemen.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Daarnaast is er een mogelijkheid",
+                    "characterLine2": "dat de huid rond de breuk beschadigd is,",
+                    "characterLine3": "of dat de breuk niet geneest.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dit kan komen door te weinig beweging,",
+                    "characterLine2": "dus probeer de oefeningen te doen",
+                    "characterLine3": "als ze niet al te veel pijn doen.",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Neem daarnaast contact met een dokter",
+                    "characterLine2": "of arts, om te bespreken hoe dit komt,",
+                    "characterLine3": "en om de symptomen verder te verminderen.",
+
+                    "characterEmotion": "neutral"
+                }
+            ]
+        },
+        {
+            "seriesName": "appQuestion",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Vraag maar raak!",
+
+                    "characterEmotion": "cheerful",
+                    "dialogueOptions": [
+                        {
+                            "text": "Wat doet de kalender?",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "explainCalendar"
+                        },
+                        {
+                            "text": "Wat doet de kast?",
+                            "iconName": "questionMark",
+                            "takesYouTo": "explainCloset"
+                        },
+                        {
+                            "text": "Wat doet het scherm?",
+                            "iconName": "personWithCast",
+                            "takesYouTo": "explainScreen"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seriesName": "explainCalendar",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Daar kun je afspraken inplannen,",
+                    "characterLine2": "en ze vervolgens bijhouden.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dat mogen doktersbezoeken zijn,",
+                    "characterLine2": "of andere dingen.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "(Ik zie het verschil toch niet!)",
+
+                    "characterEmotion": "cheerful"
+                }
+            ]
+        },
+        {
+            "seriesName": "explainCloset",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "In de kast kun je je uiterlijk aanpassen!",
+
+                    "characterEmotion": "cheerful"
+                },
+                {
+                    "characterLine1": "Je kunt kiezen uit twee verschillende",
+                    "characterLine2": "kapsels, en een aantal kleuropties.",
+                    "characterLine3": "Je kunt zelfs je gips kiezen!",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Je hoeft jezelf trouwens niet precies",
+                    "characterLine2": "na te maken. Als je liever een poppetje",
+                    "characterLine3": "zonder gips hebt, is daar niets mis mee!",
+
+                    "characterEmotion": "cheerful"
+                }
+            ]
+        },
+        {
+            "seriesName": "explainScreen",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Als je op het scherm klikt, zie je een",
+                    "characterLine2": "aantal knoppen.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Dat zijn de onderdelen van jouw behandeling.",
+                    "characterLine2": "Het idee is dat we die van",
+                    "characterLine3": "links naar rechts door gaan nemen.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Als je er één aanklikt, kom ik je",
+                    "characterLine2": "uitleg geven over dat onderdeel.",
+                    "characterLine3": "Zo gaan we samen door jouw behandeling heen!",
+
+                    "characterEmotion": "cheerful"
                 }
             ]
         },
