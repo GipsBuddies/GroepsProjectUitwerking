@@ -65,6 +65,7 @@ public class AfterLoginInputHandler : MonoBehaviour
         choiceRoute.CharacterType = avatarData.characterType;
         choiceRoute.SkinTone = avatarData.skinTone;
         choiceRoute.HairStyle = avatarData.hairStyle;
+        choiceRoute.HairColor = avatarData.hairColor;
         choiceRoute.ShirtColor = avatarData.shirtColor;
         choiceRoute.PantsColor = avatarData.pantsColor;
         choiceRoute.ShoeColor = avatarData.shoeColor;

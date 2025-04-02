@@ -25,7 +25,8 @@ public class SafeAvatar : MonoBehaviour
         choiceRoute.CharacterType = avatarData.characterType;
         choiceRoute.SkinTone = avatarData.skinTone;
         choiceRoute.HairStyle = avatarData.hairStyle;
-        choiceRoute.ShirtColor = avatarData.hairColor;
+        choiceRoute.HairColor = avatarData.hairColor;
+        choiceRoute.ShirtColor = avatarData.shirtColor;
         choiceRoute.PantsColor = avatarData.pantsColor;
         choiceRoute.ShoeColor = avatarData.shoeColor;
         choiceRoute.CastColor = avatarData.castColor;

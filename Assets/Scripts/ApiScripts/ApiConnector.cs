@@ -234,18 +234,18 @@ public async Task ReadChoiceRoute()
                     BirthDate = DateTime.Now.AddYears(-10),
                     NameDoctor = "Niet ingevuld",
                     CharacterType = 1,
-                    CastColor = 3,
+                    CastColor = UnityEngine.Random.Range(1, 5),
                     HasCastOnLeftArm = true,
                     HasCastOnRightArm = false,
                     HasCastOnLeftLeg = false,
                     HasCastOnRightLeg = true,
-                    SkinTone = 1,
-                    HairStyle = 2,
-                    HairColor = 2,
-                    ShirtColor = 4,
-                    PantsColor = 3,
-                    ShoeColor = 1
-                };
+                    SkinTone = UnityEngine.Random.Range(1, 5),
+                    HairStyle = UnityEngine.Random.Range(1, 3),
+                    HairColor = UnityEngine.Random.Range(1, 5),
+                    ShirtColor = UnityEngine.Random.Range(1, 5),
+                    PantsColor = UnityEngine.Random.Range(1, 5),
+                    ShoeColor = UnityEngine.Random.Range(1, 5)
+                 };
 
                 await CreateChoiceRoute(newChoiceRoute);
 
