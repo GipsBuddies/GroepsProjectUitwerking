@@ -123,7 +123,7 @@ public class DialogueMode : MonoBehaviour
         if(_activeDialogueScreen.dialogueOptions != null)
         {
             float firstButtonYForManyButtons = _activeDialogueScreen.dialogueOptions.Length > 2 ? FirstButtonY + 150 : FirstButtonY;
-            float smartButtonSpacing = _activeDialogueScreen.dialogueOptions.Length > 3 ? ButtonSpacing * (Mathf.Pow((float)0.8, _activeDialogueScreen.dialogueOptions.Length)) : ButtonSpacing;
+            float smartButtonSpacing = _activeDialogueScreen.dialogueOptions.Length > 3 ? ButtonSpacing * (Mathf.Pow((float)0.95, _activeDialogueScreen.dialogueOptions.Length)) : ButtonSpacing;
 
             for (int buttonIndex = 0; buttonIndex < _activeDialogueScreen.dialogueOptions.Length; buttonIndex++)
             {

@@ -461,14 +461,19 @@
                             "takesYouTo": "explainCalendar"
                         },
                         {
-                            "text": "Wat doet de kast?",
+                            "text": "Wat doet de ID-kaart?",
                             "iconName": "questionMark",
-                            "takesYouTo": "explainCloset"
+                            "takesYouTo": "explainID"
                         },
                         {
                             "text": "Wat doet het scherm?",
                             "iconName": "personWithCast",
                             "takesYouTo": "explainScreen"
+                        },
+                        {
+                            "text": "Wat doet de kast?",
+                            "iconName": "questionMark",
+                            "takesYouTo": "explainCloset"
                         }
                     ]
                 }
@@ -494,6 +499,29 @@
                     "characterLine1": "(Ik zie het verschil toch niet!)",
 
                     "characterEmotion": "cheerful"
+                }
+            ]
+        },
+        {
+            "seriesName": "explainID",
+
+            "dialogueScreens": [
+                {
+                    "characterLine1": "Op de ID-kaart staat informatie over jou.",
+                    "characterLine2": "Naam, geboortedatum, arts, en route.",
+
+                    "characterEmotion": "neutral"
+                },
+                {
+                    "characterLine1": "Je kunt die gegevens daar aanpassen,",
+                    "characterLine2": "of je kunt uitloggen.",
+
+                    "characterEmotion": "thinking"
+                },
+                {
+                    "characterLine1": "Ik zou dat aan een volwassene overlaten.",
+
+                    "characterEmotion": "neutral"
                 }
             ]
         },
