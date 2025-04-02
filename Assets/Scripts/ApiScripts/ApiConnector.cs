@@ -135,10 +135,10 @@ public class ApiConnector : MonoBehaviour
                 appointments.Clear();
                 foreach (var item in dataResponse.Data)
                 {
-                    Appointment a = new Appointment();
-                    a.Date = item.Date;
-                    a.Reason = item.Reason;
-                    appointments.Add(a);
+                    Appointment appointment = new Appointment();
+                    appointment.Date = item.Date;
+                    appointment.Reason = item.Reason;
+                    appointments.Add(appointment);
                 }
 
 

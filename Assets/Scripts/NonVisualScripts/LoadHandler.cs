@@ -429,79 +429,79 @@ public class LoadHandler : MonoBehaviour
             switch (date)
             {
                 case 1:
-                    date1.text = dateX.ToString("MM/dd");
+                    date1.text = dateX.ToString("dd/MM");
                     break;
                 case 2:
-                    date2.text = dateX.ToString("MM/dd");
+                    date2.text = dateX.ToString("dd/MM");
                     break;
                 case 3:
-                    date3.text = dateX.ToString("MM/dd");
+                    date3.text = dateX.ToString("dd/MM");
                     break;
                 case 4:
-                    date4.text = dateX.ToString("MM/dd");
+                    date4.text = dateX.ToString("dd/MM");
                     break;
                 case 5:
-                    date5.text = dateX.ToString("MM/dd");
+                    date5.text = dateX.ToString("dd/MM");
                     break;
                 case 6:
-                    date6.text = dateX.ToString("MM/dd");
+                    date6.text = dateX.ToString("dd/MM");
                     break;
                 case 7:
-                    date7.text = dateX.ToString("MM/dd");
+                    date7.text = dateX.ToString("dd/MM");
                     break;
                 case 8:
-                    date8.text = dateX.ToString("MM/dd");
+                    date8.text = dateX.ToString("dd/MM");
                     break;
                 case 9:
-                    date9.text = dateX.ToString("MM/dd");
+                    date9.text = dateX.ToString("dd/MM");
                     break;
                 case 10:
-                    date10.text = dateX.ToString("MM/dd");
+                    date10.text = dateX.ToString("dd/MM");
                     break;
                 case 11:
-                    date11.text = dateX.ToString("MM/dd");
+                    date11.text = dateX.ToString("dd/MM");
                     break;
                 case 12:
-                    date12.text = dateX.ToString("MM/dd");
+                    date12.text = dateX.ToString("dd/MM");
                     break;
                 case 13:
-                    date13.text = dateX.ToString("MM/dd");
+                    date13.text = dateX.ToString("dd/MM");
                     break;
                 case 14:
-                    date14.text = dateX.ToString("MM/dd");
+                    date14.text = dateX.ToString("dd/MM");
                     break;
                 case 15:
-                    date15.text = dateX.ToString("MM/dd");
+                    date15.text = dateX.ToString("dd/MM");
                     break;
                 case 16:
-                    date16.text = dateX.ToString("MM/dd");
+                    date16.text = dateX.ToString("dd/MM");
                     break;
                 case 17:
-                    date17.text = dateX.ToString("MM/dd");
+                    date17.text = dateX.ToString("dd/MM");
                     break;
                 case 18:
-                    date18.text = dateX.ToString("MM/dd");
+                    date18.text = dateX.ToString("dd/MM");
                     break;
                 case 19:
-                    date19.text = dateX.ToString("MM/dd");
+                    date19.text = dateX.ToString("dd/MM");
                     break;
                 case 20:
-                    date20.text = dateX.ToString("MM/dd");
+                    date20.text = dateX.ToString("dd/MM");
                     break;
                 case 21:
-                    date21.text = dateX.ToString("MM/dd");
+                    date21.text = dateX.ToString("dd/MM");
                     break;
                 case 22:
-                    date22.text = dateX.ToString("MM/dd");
+                    date22.text = dateX.ToString("dd/MM");
                     break;
                 case 23:
-                    date23.text = dateX.ToString("MM/dd");
+                    date23.text = dateX.ToString("dd/MM");
                     break;
                 case 24:
-                    date24.text = dateX.ToString("MM/dd");
+                    date24.text = dateX.ToString("dd/MM");
                     break;
                 case 25:
-                    date25.text = dateX.ToString("MM/dd");
+                    date25.text = dateX.ToString("dd/MM");
                     break;
                 default:
                     Debug.Log("Error in date switchcase");
