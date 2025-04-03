@@ -105,14 +105,14 @@ public class AfterLoginInputHandler : MonoBehaviour
         if (routestatus)
         {
             routestatus = true;
-            inputText.text = "b";
-            buttontext.text = "b";
+            inputText.text = "B";
+            buttontext.text = "B";
         }
         else if (!routestatus)
         {
             routestatus = false;
-            inputText.text = "a";
-            buttontext.text = "a";
+            inputText.text = "A";
+            buttontext.text = "A";
         }
     }
 

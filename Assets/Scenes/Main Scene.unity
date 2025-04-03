@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 10798549}
   - component: {fileID: 10798548}
   m_Layer: 5
-  m_Name: Text
+  m_Name: yearText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1867,7 +1867,7 @@ GameObject:
   - component: {fileID: 39812701}
   - component: {fileID: 39812700}
   m_Layer: 5
-  m_Name: Text
+  m_Name: dayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7462,7 +7462,7 @@ GameObject:
   - component: {fileID: 212526178}
   - component: {fileID: 212526177}
   m_Layer: 5
-  m_Name: RegisterUsernameInputField
+  m_Name: RegisterMailInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8989,7 +8989,7 @@ GameObject:
   - component: {fileID: 253560060}
   - component: {fileID: 253560059}
   m_Layer: 5
-  m_Name: Text
+  m_Name: hourText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10568,6 +10568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 292556135}
+  - component: {fileID: 292556136}
   m_Layer: 5
   m_Name: CreateAppointmentPopup
   m_TagString: Untagged
@@ -10599,6 +10600,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &292556136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292556134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c39163eb7f587469e695e11125d4d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDay: {fileID: 1746405272}
+  currentMonth: {fileID: 1423151342}
+  currentYear: {fileID: 92430775}
+  currentHour: {fileID: 947897366}
+  currentMinute: {fileID: 2124914840}
 --- !u!1 &293068036
 GameObject:
   m_ObjectHideFlags: 0
@@ -20155,7 +20173,7 @@ GameObject:
   - component: {fileID: 598654597}
   - component: {fileID: 598654596}
   m_Layer: 5
-  m_Name: Text
+  m_Name: monthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35753,7 +35771,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gebruikersnaam
+  m_text: E-mailadres
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -49981,7 +49999,7 @@ GameObject:
   - component: {fileID: 1545866327}
   - component: {fileID: 1545866326}
   m_Layer: 5
-  m_Name: LoginUsernameInputField
+  m_Name: LoginMailInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51087,7 +51105,7 @@ GameObject:
   - component: {fileID: 1604465969}
   - component: {fileID: 1604465968}
   m_Layer: 5
-  m_Name: Text
+  m_Name: minuteText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69755,7 +69773,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gebruikersnaam
+  m_text: E-mailadres
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
