@@ -54,11 +54,11 @@ public class LoadAfterLoginHandler : MonoBehaviour
 
         if (apiConnector.currentChoiceRoute.Path)
         {
-            pathText.text = "b";
+            pathText.text = "B";
         }
         else
         {
-            pathText.text = "a";
+            pathText.text = "A";
         }
 
         if (apiConnector.currentChoiceRoute.NamePatient == "")
